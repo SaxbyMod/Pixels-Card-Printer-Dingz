@@ -282,7 +282,7 @@ class Blackout:
         return Blackout(self.amount - other.amount)
 
     def getCostImage(self, temple: str) -> Image:
-        baseImage = Image.open("assets/costs/blackout/blackout.png").convert("RGBA")
+        baseImage = Image.open("assets/costs/blackout_bar.png").convert("RGBA")
         newBaseImage = get_temple_variant(baseImage, temple)
         if self.amount > 0:
             i = self.amount
@@ -315,14 +315,14 @@ class Skulls:
         self.amount = amount
 
     def __add__(self, other):
-        if type(other) is not Bones:
+        if type(other) is not Skulls:
             raise TypeError("Add operation can only be performed on two resources of the same type")
-        return Bones(self.amount + other.amount)
+        return Skulls(self.amount + other.amount)
 
     def __sub__(self, other):
-        if type(other) is not Bones:
+        if type(other) is not Skulls:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
-        return Bones(self.amount - other.amount)
+        return Skulls(self.amount - other.amount)
 
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 4:
@@ -348,14 +348,14 @@ class Sun:
         self.amount = amount
 
     def __add__(self, other):
-        if type(other) is not Bones:
+        if type(other) is not Sun:
             raise TypeError("Add operation can only be performed on two resources of the same type")
-        return Bones(self.amount + other.amount)
+        return Sun(self.amount + other.amount)
 
     def __sub__(self, other):
-        if type(other) is not Bones:
+        if type(other) is not Sun:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
-        return Bones(self.amount - other.amount)
+        return Sun(self.amount - other.amount)
 
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 3:
@@ -363,6 +363,84 @@ class Sun:
             return get_temple_variant(img, temple)
 
         img = Image.open("assets/costs/sun/sun.png").convert("RGBA")
+        version_img = get_temple_variant(img, temple)
+
+        duplicate_image = version_img.copy()
+        final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
+        final_image = Image.new('RGBA', (final_width, version_img.height))
+        final_image.paste(version_img, (0, 0))
+
+        for i in range(self.amount - 1):
+            paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
+            final_image.paste(duplicate_image, paste_position, duplicate_image)
+
+        return final_image
+    
+class Frequency:
+    def __init__(self, amount: int):
+        self.amount = amount
+
+    def __add__(self, other):
+        if type(other) is not Frequency:
+            raise TypeError("Add operation can only be performed on two resources of the same type")
+        return Frequency(self.amount + other.amount)
+
+    def __sub__(self, other):
+        if type(other) is not Frequency:
+            raise TypeError("Sub operation can only be performed on two resources of the same type")
+        return Frequency(self.amount - other.amount)
+    
+    def getCostImage(self, temple: str) -> Image:
+        baseImage = Image.open("assets/costs/frequency_bar.png").convert("RGBA")
+        newBaseImage = get_temple_variant(baseImage, temple)
+        if self.amount > 0:
+            i = round(self.amount)
+            pos1 = round(i%10)
+            pastepos1 = (250, 10)
+            i = round(i/10)
+            pos2 = round(i%10)
+            pastepos2 = (170, 10)
+            i = round(i/10)
+            pos3 = round(i%10)
+            pastepos3 = (90, 10)
+            i = round(i/10)
+            pos4 = round(i%10)
+            pastepos4 = (10, 10)
+            pos1Image = Image.open(f"assets/costs/frequency/frequency_{str(pos1)}.png").convert("RGBA")
+            pos2Image = Image.open(f"assets/costs/frequency/frequency_{str(pos2)}.png").convert("RGBA")
+            pos3Image = Image.open(f"assets/costs/frequency/frequency_{str(pos3)}.png").convert("RGBA")
+            pos4Image = Image.open(f"assets/costs/frequency/frequency_{str(pos4)}.png").convert("RGBA")
+            if 6 > pos1 != 0 :
+                newBaseImage.paste(pos1Image, pastepos1, pos1Image)
+            if 6 > pos2 != 0:
+                newBaseImage.paste(pos2Image, pastepos2, pos2Image)
+            if 6 > pos3 != 0:
+                newBaseImage.paste(pos3Image, pastepos3, pos3Image)
+            if 6 > pos4 != 0:
+                newBaseImage.paste(pos4Image, pastepos4, pos4Image)
+        final_image = newBaseImage
+        return final_image
+
+class Teeth:
+    def __init__(self, amount: int):
+        self.amount = amount
+
+    def __add__(self, other):
+        if type(other) is not Teeth:
+            raise TypeError("Add operation can only be performed on two resources of the same type")
+        return Teeth(self.amount + other.amount)
+
+    def __sub__(self, other):
+        if type(other) is not Teeth:
+            raise TypeError("Sub operation can only be performed on two resources of the same type")
+        return Teeth(self.amount - other.amount)
+
+    def getCostImage(self, temple: str) -> Image:
+        if self.amount > 3:
+            img = Image.open(f"assets/costs/teeth/teeth_{self.amount}.png").convert("RGBA")
+            return get_temple_variant(img, temple)
+
+        img = Image.open("assets/costs/teeth/tooth.png").convert("RGBA")
         version_img = get_temple_variant(img, temple)
 
         duplicate_image = version_img.copy()
@@ -472,6 +550,12 @@ def get_cost(strcost):
 
             elif "sun" in c:
                 cost.append(Sun(int(c.split(" ")[0])))
+
+            elif "frequency" in c:
+                cost.append(Frequency(int(c.split(" ")[0])))
+
+            elif "teeth" in c or "tooth" in c:
+                cost.append(Teeth(int(c.split(" ")[0])))
 
             # Add custom costs here with other elif
             else:
