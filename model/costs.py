@@ -3,7 +3,6 @@ from model import config, logging
 
 TEMPLES = config["temples"]
 
-
 def get_temple_variant(image, temple):
     if temple not in TEMPLES:
         raise ValueError(f"'{temple}' is not a valid temple.")
@@ -14,9 +13,7 @@ def get_temple_variant(image, temple):
     bottom = (version_index + 1) * version_height
     return image.crop((0, top, width, bottom))
 
-
 class Blood:
-
     def __init__(self, amount: int):
         self.amount = amount
 
@@ -33,18 +30,14 @@ class Blood:
     def getCostImage(self, temple: str) -> Image:
         img = Image.open(f"assets/costs/blood/blood.png").convert("RGBA")
         cost_img = get_temple_variant(img, temple)
-
         total_width = cost_img.width * self.amount
         final_img = Image.new('RGBA', (total_width, cost_img.height))
         for i in range(self.amount):
             x_offset = i * cost_img.width
             final_img.paste(cost_img, (x_offset, 0))
-
         return final_img
 
-
 class Bones:
-
     def __init__(self, amount: int):
         self.amount = amount
 
@@ -62,24 +55,18 @@ class Bones:
         if self.amount > 4:
             img = Image.open(f"assets/costs/bones/bones{self.amount}.png").convert("RGBA")
             return get_temple_variant(img, temple)
-
         img = Image.open("assets/costs/bones/bones.png").convert("RGBA")
         version_img = get_temple_variant(img, temple)
-
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
         final_image.paste(version_img, (0, 0))
-
         for i in range(self.amount - 1):
             paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
             final_image.paste(duplicate_image, paste_position, duplicate_image)
-
         return final_image
 
-
 class Energy:
-
     def __init__(self, energy: int = 0, overcharge: int = 0, overheat: int = 0, renew: int = 0, reroute: int = 0, shortage: int = 0):
         self.energy = energy
         self.overcharge = overcharge
@@ -126,10 +113,8 @@ class Energy:
                 for i in range(amount):
                     paste_cell(bar, Image.open(f"assets/costs/energy/{resource}.png"), i == 0)
             return bar
-
         final_width = 0
         bars = []
-
         if self.energy > 0:
             x_offset = 0
             energy_bar = generate_bar_image(self.energy, "energy")
@@ -160,8 +145,6 @@ class Energy:
             shortage_bar = generate_bar_image(self.shortage, "shortage")
             final_width += shortage_bar.width
             bars.append(shortage_bar)
-        # Keep doing this for every single energy type
-
         cost_image = Image.new("RGBA", (final_width, 90))
         cost_image.paste(bars[0])
         width = 0
@@ -170,9 +153,7 @@ class Energy:
             width += bars[i].width
         return cost_image
 
-
 class Gems:
-
     def __init__(self, *gems: str):
         self.gems = list(gems)
 
@@ -207,26 +188,20 @@ class Gems:
             image = self.getGemImage(gem, temple)
             for _ in range(int(gem.split(" ")[0])):
                 gem_images.append(image)
-
         total_width = sum(img.width for img in gem_images) - (len(gem_images) - 1) * 10
         max_height = max(img.height for img in gem_images)
-
         cost_image = Image.new("RGBA", (total_width, max_height), (255, 255, 255, 0))
-
         offset = 0
         for img in gem_images:
             if img.height == 90 and img.height != max_height:
                 paste_position = (offset, 10)
             else:
                 paste_position = (offset, 0)
-
             cost_image.paste(img, paste_position, mask=img)
             offset += img.width - 10
         return cost_image
 
-
 class Alchemy:
-
     def __init__(self, *chemicals: str):
         self.chemicals = list(chemicals)
 
@@ -254,20 +229,16 @@ class Alchemy:
             image = Image.open(f"assets/costs/alchemy/{name}.png").convert("RGBA")
             for _ in range(int(chemical.split(" ")[0])):
                 chemical_images.append(image)
-
         space_removed = {1: 0, 2: 0, 3: 0, 4: 2, 5: 3, 6: 3, 7: 4, 8: 4, 9: 5, 10: 5, 11: 5}.get(len(chemical_images), 6) * 10
         total_width = (sum(img.width + 10 - space_removed for img in chemical_images) - 10 + space_removed)
         cost_image = Image.new("RGBA", (total_width, 100), (255, 255, 255, 0))
-
         offset = 0
         for img in chemical_images:
             cost_image.paste(img, (offset, 0), mask=img)
             offset += img.width + 10 - space_removed
         return cost_image
     
-
 class Blackout:
-
     def __init__(self, amount: int):
         self.amount = amount
 
@@ -309,7 +280,6 @@ class Blackout:
         final_image = newBaseImage
         return final_image
         
-
 class Skulls:
     def __init__(self, amount: int):
         self.amount = amount
@@ -328,19 +298,15 @@ class Skulls:
         if self.amount > 4:
             img = Image.open(f"assets/costs/skulls/skull_{self.amount}.png").convert("RGBA")
             return get_temple_variant(img, temple)
-
         img = Image.open("assets/costs/skulls/skull.png").convert("RGBA")
         version_img = get_temple_variant(img, temple)
-
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
         final_image.paste(version_img, (0, 0))
-
         for i in range(self.amount - 1):
             paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
             final_image.paste(duplicate_image, paste_position, duplicate_image)
-
         return final_image
     
 class Sun:
@@ -361,19 +327,15 @@ class Sun:
         if self.amount > 3:
             img = Image.open(f"assets/costs/sun/sun_{self.amount}.png").convert("RGBA")
             return get_temple_variant(img, temple)
-
         img = Image.open("assets/costs/sun/sun.png").convert("RGBA")
         version_img = get_temple_variant(img, temple)
-
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
         final_image.paste(version_img, (0, 0))
-
         for i in range(self.amount - 1):
             paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
             final_image.paste(duplicate_image, paste_position, duplicate_image)
-
         return final_image
     
 class Frequency:
@@ -439,21 +401,16 @@ class Teeth:
         if self.amount > 3:
             img = Image.open(f"assets/costs/teeth/teeth_{self.amount}.png").convert("RGBA")
             return get_temple_variant(img, temple)
-
         img = Image.open("assets/costs/teeth/tooth.png").convert("RGBA")
         version_img = get_temple_variant(img, temple)
-
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
         final_image.paste(version_img, (0, 0))
-
         for i in range(self.amount - 1):
             paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
             final_image.paste(duplicate_image, paste_position, duplicate_image)
-
         return final_image
-
 
 def get_cost(strcost):
     cost = []
@@ -461,59 +418,46 @@ def get_cost(strcost):
         return cost
     try:
         for c in strcost.split(" + "):
-            # Blood
             if "blood" in c:
                 cost.append(Blood(int(c.split(" ")[0])))
-
-            # Bones
             elif "bone" in c:
                 cost.append(Bones(int(c.split(" ")[0])))
-
-            # Energy
             elif "energy" in c or "overcharge" in c or "overheat" in c or "renew" in c or "reroute" in c or "shortage" in c:
                 energy = None
                 i = 0
                 while energy is None and i < len(cost):
                     if isinstance(cost[i], Energy):
                         energy = cost[i]
-
                 if "energy" in c:  # Blue Energy
                     if energy:
                         energy.energy = int(c.split(" ")[0])
                     else:
                         cost.append(Energy(energy=int(c.split(" ")[0])))
-
                 elif "overcharge" in c:  # Yellow Energy
                     if energy:
                         energy.overcharge = int(c.split(" ")[0])
                     else:
                         cost.append(Energy(overcharge=int(c.split(" ")[0])))
-
                 elif "overheat" in c:  # Red Energy
                     if energy:
                         energy.overheat = int(c.split(" ")[0])
                     else:
                         cost.append(Energy(overheat=int(c.split(" ")[0])))
-
                 elif "renew" in c:  # Green Energy
                     if energy:
                         energy.renew = int(c.split(" ")[0])
                     else:
                         cost.append(Energy(renew=int(c.split(" ")[0])))
-
                 elif "reroute" in c:  # Orange Energy
                     if energy:
                         energy.reroute = int(c.split(" ")[0])
                     else:
                         cost.append(Energy(reroute=int(c.split(" ")[0])))
-
                 elif "shortage" in c:  # Purple Energy
                     if energy:
                         energy.shortage = int(c.split(" ")[0])
                     else:
                         cost.append(Energy(shortage=int(c.split(" ")[0])))
-
-            # Gems
             elif any(gem in c for gem in
                      ["emerald", "sapphire", "ruby", "rubies", "topaz", "amethyst", "garnet", "onyx", "prism"]):
                 gems = None
@@ -527,8 +471,6 @@ def get_cost(strcost):
                 else:
                     gems = Gems(c)
                     cost.append(gems)
-
-            # Alchemy
             elif any(chemical in c for chemical in ["flesh", "metal", "elixir", "aether"]):
                 chemicals = None
                 i = 0
@@ -541,22 +483,16 @@ def get_cost(strcost):
                 else:
                     chemicals = Alchemy(c)
                     cost.append(chemicals)
-
             elif "blackout" in c:
                 cost.append(Blackout(int(c.split(" ")[0])))
-
             elif "skulls" in c:
                 cost.append(Skulls(int(c.split(" ")[0])))
-
             elif "sun" in c:
                 cost.append(Sun(int(c.split(" ")[0])))
-
             elif "frequency" in c:
                 cost.append(Frequency(int(c.split(" ")[0])))
-
             elif "teeth" in c or "tooth" in c:
                 cost.append(Teeth(int(c.split(" ")[0])))
-
             # Add custom costs here with other elif
             else:
                 raise KeyError(f"Unknown cost type: {c}")
