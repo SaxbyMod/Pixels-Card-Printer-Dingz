@@ -411,6 +411,35 @@ class Teeth:
             paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
             final_image.paste(duplicate_image, paste_position, duplicate_image)
         return final_image
+    
+class Bile:
+    def __init__(self, amount: int):
+        self.amount = amount
+
+    def __add__(self, other):
+        if type(other) is not Bile:
+            raise TypeError("Add operation can only be performed on two resources of the same type")
+        return Bile(self.amount + other.amount)
+
+    def __sub__(self, other):
+        if type(other) is not Bile:
+            raise TypeError("Sub operation can only be performed on two resources of the same type")
+        return Bile(self.amount - other.amount)
+
+    def getCostImage(self, temple: str) -> Image:
+        if self.amount > 3:
+            img = Image.open(f"assets/costs/bile/bile_{self.amount}.png").convert("RGBA")
+            return get_temple_variant(img, temple)
+        img = Image.open("assets/costs/bile/bile.png").convert("RGBA")
+        version_img = get_temple_variant(img, temple)
+        duplicate_image = version_img.copy()
+        final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
+        final_image = Image.new('RGBA', (final_width, version_img.height))
+        final_image.paste(version_img, (0, 0))
+        for i in range(self.amount - 1):
+            paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
+            final_image.paste(duplicate_image, paste_position, duplicate_image)
+        return final_image
 
 def get_cost(strcost):
     cost = []
@@ -493,6 +522,8 @@ def get_cost(strcost):
                 cost.append(Frequency(int(c.split(" ")[0])))
             elif "teeth" in c or "tooth" in c:
                 cost.append(Teeth(int(c.split(" ")[0])))
+            elif "bile" in c:
+                cost.append(Bile(int(c.split(" ")[0])))
             # Add custom costs here with other elif
             else:
                 raise KeyError(f"Unknown cost type: {c}")

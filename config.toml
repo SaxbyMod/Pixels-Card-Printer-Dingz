@@ -30,9 +30,9 @@ sigil_img_scale = 100       # Scaling percentage for sigils (Default: 100)
 show_outline_only = false   # Draws the "outline" variant (no colors) of sigils if possible (Default: false)
 
 # Icon settings for sigil descriptions
-icons.resource = false  # Display resource icons (Default: false)
+icons.resource = true  # Display resource icons (Default: false)
 icons.mark = true       # Display mark icons (Default: true)
-icons.sigil = false     # Display sigil icons (Default: false)
+icons.sigil = true     # Display sigil icons (Default: false)
 
 # Text/Icon size for the sigil upper_name and sigil description
 sigil_name = 55                     # (Default: 55)
