@@ -35,11 +35,11 @@ icons.mark = true       # Display mark icons (Default: true)
 icons.sigil = true     # Display sigil icons (Default: false)
 
 # Text/Icon size for the sigil upper_name and sigil description
-sigil_name = 55                     # (Default: 55)
-sigil_description = 45              # (Default: 45)
-sigil_description_icon_size = 40    # (Default: 40)
-trait_description = 40              # (Default: 40)
-trait_description_icon_size = 35    # (Default: 35)
+sigil_name = 48                     # (Default: 55)
+sigil_description = 42              # (Default: 45)
+sigil_description_icon_size = 35    # (Default: 40)
+trait_description = 36              # (Default: 40)
+trait_description_icon_size = 30    # (Default: 35)
 
 # Sigil export settings
 export_normal_formatting = true             # Export sigils in default format (Default: true)
@@ -69,7 +69,7 @@ allow_base_game_display = true      # Allow base game sigil display (Default: tr
 prioritize_removing_bottom = true
 
 # Other preferences for drawing cards.
-center_card_name = false         # Center the card name instead of aligning it to the left (Default: true)
+center_card_name = true         # Center the card name instead of aligning it to the left (Default: true)
 write_card_description = true   # Write the temple, tier and tribes at the top of the card (Default: true)
 conduit_tribe_overlay = true    # Display conduit indicator for "Conduit" tribe cards (Default: true)
 traits_at_bottom = true         # Display traits at the bottom of the card (Default: true)
@@ -89,17 +89,42 @@ attack_sigil_on_power_stat = true
 # Text sizes for cards
 name = 110          # Card upper_name text size (Default: 110)
 stats = 110         # Card stats text size (Default: 110)
-flavor_text = 45    # Flavor text size (Default: 45)
+flavor_text = 38    # Flavor text size (Default: 45)
 
 # Indicates the order of temples. Used to determine which variant of a sprite to take.
 # (Default: ["Beast", "Undead", "Tech", "Magick", "Alchemy"])
-temples = ["Beast", "Undead", "Tech", "Magick", "Alchemy"]
+temples = ["Beast", "Undead", "Tech", "Magick", "Alchemy", "Frequency"]
 
 text_colors.Beast = [125, 78, 48]       # Beast temple flavor text color (Default: [125, 78, 48])
 text_colors.Undead = [106, 112, 84]     # Undead temple flavor text color (Default: [106, 112, 84])
 text_colors.Tech = [73, 123, 156]       # Tech temple flavor text color (Default: [73, 123, 156])
 text_colors.Magick = [156, 73, 128]     # Magick temple flavor text color (Default: [156, 73, 128])
 text_colors.Alchemy = [109, 70, 49]     # Alchemy temple flavor text color (Default: [109, 70, 49])
+text_colors.Frequency = [52, 76, 70]
+
+# Shades for temples
+
+# Light Tones
+light_tone.Beast = [190, 117, 65]
+light_tone.Undead = [133, 151, 105]
+light_tone.Tech = [97, 170, 194]
+light_tone.Magick = [203, 102, 125]
+light_tone.Alchemy = [139, 103, 75]
+light_tone.Frequency = [69, 102, 94]
+# Dark Tones
+dark_tone.Beast = [78, 50, 38]
+dark_tone.Undead = [60, 73, 55]
+dark_tone.Tech = [33, 71, 99]
+dark_tone.Magick = [95, 32, 69]
+dark_tone.Alchemy = [92, 52, 30]
+dark_tone.Frequency = [35, 50, 47]
+# Darker Tones
+darker_tone.Beast = [64, 42, 33]
+darker_tone.Undead = [48, 59, 43]
+darker_tone.Tech = [24, 55, 78]
+darker_tone.Magick = [81, 24, 57]
+darker_tone.Alchemy = [74, 39, 20]
+darker_tone.Frequency = [28, 37, 35]
 
 
 # Sigil height limits for each outline. Common heights also serve as talking and side deck heights.
@@ -127,6 +152,7 @@ power_coord.Undead = [198, 885]     # Default: [198, 885]
 power_coord.Tech = [198, 885]       # Default: [198, 885]
 power_coord.Magick = [198, 885]     # Default: [198, 885]
 power_coord.Alchemy = [198, 885]    # Default: [198, 885]
+power_coord.Frequency = [198, 885]  # Default: [198, 885]
 # Box for the attack sigil to go on the power stat for each attack mark (only if attack_sigil_on_power_stat is on)
 attack_sigil_box.Terrain = [130, 840, 300, 1020]    # Default: [130, 840, 300, 1020]
 attack_sigil_box.Beast = [130, 840, 310, 1010]      # Default: [130, 840, 310, 1010]
@@ -134,6 +160,7 @@ attack_sigil_box.Undead = [130, 840, 320, 1020]     # Default: [130, 840, 320, 1
 attack_sigil_box.Tech = [120, 830, 320, 1030]       # Default: [120, 830, 320, 1030]
 attack_sigil_box.Magick = [130, 840, 310, 1030]     # Default: [130, 840, 310, 1030]
 attack_sigil_box.Alchemy = [140, 820, 330, 1030]    # Default: [140, 820, 330, 1030]
+attack_sigil_box.Frequency = [130, 840, 310, 1020]
 
 # Card export settings
 export_sorted_by_folder = true  # Will create folders for each temple and tier to sort the cards when exporting them.

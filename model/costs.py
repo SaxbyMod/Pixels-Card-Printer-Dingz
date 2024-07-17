@@ -13,6 +13,22 @@ def get_temple_variant(image, temple):
     bottom = (version_index + 1) * version_height
     return image.crop((0, top, width, bottom))
 
+def change_cost_color(image, temple):
+    if temple not in TEMPLES:
+        raise ValueError(f"'{temple}' is not a valid temple.")
+    for x in range(image.width):
+        for y in range(image.height):
+            current_pixel = image.getpixel((x, y))[:3]
+            if current_pixel == (190, 117, 65):
+                image.putpixel((x, y), config["light_tone"][temple])
+            elif current_pixel == (125, 78, 48):
+                image.putpixel((x, y), config["text_colors"][temple])
+            elif current_pixel == (78, 50, 38):
+                image.putpixel((x, y), config["dark_tone"][temple])
+            elif current_pixel == (64, 42, 33):
+                image.putpixel((x, y), config["darker_tone"][temple])
+    return image
+
 class Blood:
     def __init__(self, amount: int):
         self.amount = amount
@@ -29,7 +45,7 @@ class Blood:
 
     def getCostImage(self, temple: str) -> Image:
         img = Image.open(f"assets/costs/blood/blood.png").convert("RGBA")
-        cost_img = get_temple_variant(img, temple)
+        cost_img = change_cost_color(img, temple)
         total_width = cost_img.width * self.amount
         final_img = Image.new('RGBA', (total_width, cost_img.height))
         for i in range(self.amount):
@@ -54,9 +70,9 @@ class Bones:
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 4:
             img = Image.open(f"assets/costs/bones/bones{self.amount}.png").convert("RGBA")
-            return get_temple_variant(img, temple)
+            return change_cost_color(img, temple)
         img = Image.open("assets/costs/bones/bones.png").convert("RGBA")
-        version_img = get_temple_variant(img, temple)
+        version_img = change_cost_color(img, temple)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -86,8 +102,8 @@ class Energy:
         return Energy(self.energy - other.energy, self.overcharge - other.overcharge, self.overheat - other.overheat, self.renew - other.renew, self.reroute - other.reroute, self.shortage - other.shortage)
 
     def getCostImage(self, temple: str) -> Image:
-        first_cell = get_temple_variant(Image.open(f"assets/costs/cell_first.png"), temple)
-        cell = get_temple_variant(Image.open(f"assets/costs/cell.png"), temple)
+        first_cell = change_cost_color(Image.open(f"assets/costs/cell_first.png"), temple)
+        cell = change_cost_color(Image.open(f"assets/costs/cell.png"), temple)
 
         def paste_cell(bar, cell_content, first=False):
             nonlocal x_offset
@@ -180,7 +196,7 @@ class Gems:
         gem = gem.split(" ")[-1].lower()
         color = dict(emeralds="emerald", sapphires="sapphire", rubies="ruby", topazes="topaz", amethysts="amethyst", garnets="garnet", onyxs="onyx", prisms="prism").get(gem, gem)
         img = Image.open(f"assets/costs/gems/{shatter}{color.lower()}.png").convert("RGBA")
-        return get_temple_variant(img, temple)
+        return change_cost_color(img, temple)
 
     def getCostImage(self, temple: str) -> Image:
         gem_images = []
@@ -254,7 +270,7 @@ class Blackout:
 
     def getCostImage(self, temple: str) -> Image:
         baseImage = Image.open("assets/costs/blackout_bar.png").convert("RGBA")
-        newBaseImage = get_temple_variant(baseImage, temple)
+        newBaseImage = change_cost_color(baseImage, temple)
         if self.amount > 0:
             i = self.amount
             pos1 = round(i%10)
@@ -266,11 +282,11 @@ class Blackout:
             pos3 = round(i)
             pastepos3 = (10, 20)
             pos1Image = Image.open(f"assets/costs/blackout/blackout_{str(pos1)}.png").convert("RGBA")
-            newPos1Image = get_temple_variant(pos1Image, temple)
+            newPos1Image = change_cost_color(pos1Image, temple)
             pos2Image = Image.open(f"assets/costs/blackout/blackout_{str(pos2)}.png").convert("RGBA")
-            newPos2Image = get_temple_variant(pos2Image, temple)
+            newPos2Image = change_cost_color(pos2Image, temple)
             pos3Image = Image.open(f"assets/costs/blackout/blackout_{str(pos3)}.png").convert("RGBA")
-            newPos3Image = get_temple_variant(pos3Image, temple)
+            newPos3Image = change_cost_color(pos3Image, temple)
             if pos1 != 0:
                 newBaseImage.paste(newPos1Image, pastepos1, newPos1Image)
             if pos2 != 0:
@@ -297,9 +313,9 @@ class Skulls:
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 4:
             img = Image.open(f"assets/costs/skulls/skull_{self.amount}.png").convert("RGBA")
-            return get_temple_variant(img, temple)
+            return change_cost_color(img, temple)
         img = Image.open("assets/costs/skulls/skull.png").convert("RGBA")
-        version_img = get_temple_variant(img, temple)
+        version_img = change_cost_color(img, temple)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -326,9 +342,9 @@ class Sun:
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/sun/sun_{self.amount}.png").convert("RGBA")
-            return get_temple_variant(img, temple)
+            return change_cost_color(img, temple)
         img = Image.open("assets/costs/sun/sun.png").convert("RGBA")
-        version_img = get_temple_variant(img, temple)
+        version_img = change_cost_color(img, temple)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -354,7 +370,7 @@ class Frequency:
     
     def getCostImage(self, temple: str) -> Image:
         baseImage = Image.open("assets/costs/frequency_bar.png").convert("RGBA")
-        newBaseImage = get_temple_variant(baseImage, temple)
+        newBaseImage = change_cost_color(baseImage, temple)
         if self.amount > 0:
             i = round(self.amount)
             pos1 = round(i%10)
@@ -400,9 +416,9 @@ class Teeth:
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/teeth/teeth_{self.amount}.png").convert("RGBA")
-            return get_temple_variant(img, temple)
+            return change_cost_color(img, temple)
         img = Image.open("assets/costs/teeth/tooth.png").convert("RGBA")
-        version_img = get_temple_variant(img, temple)
+        version_img = change_cost_color(img, temple)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -429,9 +445,9 @@ class Bile:
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/bile/bile_{self.amount}.png").convert("RGBA")
-            return get_temple_variant(img, temple)
+            return change_cost_color(img, temple)
         img = Image.open("assets/costs/bile/bile.png").convert("RGBA")
-        version_img = get_temple_variant(img, temple)
+        version_img = change_cost_color(img, temple)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -458,9 +474,9 @@ class Truth:
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/truth&lies/truth_{self.amount}.png").convert("RGBA")
-            return get_temple_variant(img, temple)
+            return change_cost_color(img, temple)
         img = Image.open("assets/costs/truth&lies/truth.png").convert("RGBA")
-        version_img = get_temple_variant(img, temple)
+        version_img = change_cost_color(img, temple)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -487,9 +503,9 @@ class Lies:
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/truth&lies/lies_{self.amount}.png").convert("RGBA")
-            return get_temple_variant(img, temple)
+            return change_cost_color(img, temple)
         img = Image.open("assets/costs/truth&lies/lie.png").convert("RGBA")
-        version_img = get_temple_variant(img, temple)
+        version_img = change_cost_color(img, temple)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -516,9 +532,9 @@ class Seeds:
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/seeds/seeds_{self.amount}.png").convert("RGBA")
-            return get_temple_variant(img, temple)
+            return change_cost_color(img, temple)
         img = Image.open("assets/costs/seeds/seed.png").convert("RGBA")
-        version_img = get_temple_variant(img, temple)
+        version_img = change_cost_color(img, temple)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -545,9 +561,96 @@ class Stardust:
     def getCostImage(self, temple: str) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/stardust/stardust_{self.amount}.png").convert("RGBA")
-            return get_temple_variant(img, temple)
+            return change_cost_color(img, temple)
         img = Image.open("assets/costs/stardust/stardust.png").convert("RGBA")
-        version_img = get_temple_variant(img, temple)
+        version_img = change_cost_color(img, temple)
+        duplicate_image = version_img.copy()
+        final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
+        final_image = Image.new('RGBA', (final_width, version_img.height))
+        final_image.paste(version_img, (0, 0))
+        for i in range(self.amount - 1):
+            paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
+            final_image.paste(duplicate_image, paste_position, duplicate_image)
+        return final_image
+    
+class Gasoline:
+    def __init__(self, amount: int):
+        self.amount = amount
+
+    def __add__(self, other):
+        if type(other) is not Gasoline:
+            raise TypeError("Add operation can only be performed on two resources of the same type")
+        return Gasoline(self.amount + other.amount)
+
+    def __sub__(self, other):
+        if type(other) is not Gasoline:
+            raise TypeError("Sub operation can only be performed on two resources of the same type")
+        return Gasoline(self.amount - other.amount)
+
+    def getCostImage(self, temple: str) -> Image:
+        if self.amount > 3:
+            img = Image.open(f"assets/costs/gasoline/gasoline_{self.amount}.png").convert("RGBA")
+            return change_cost_color(img, temple)
+        img = Image.open("assets/costs/gasoline/gasoline.png").convert("RGBA")
+        version_img = change_cost_color(img, temple)
+        duplicate_image = version_img.copy()
+        final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
+        final_image = Image.new('RGBA', (final_width, version_img.height))
+        final_image.paste(version_img, (0, 0))
+        for i in range(self.amount - 1):
+            paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
+            final_image.paste(duplicate_image, paste_position, duplicate_image)
+        return final_image
+
+class Ash:
+    def __init__(self, amount: int):
+        self.amount = amount
+
+    def __add__(self, other):
+        if type(other) is not Ash:
+            raise TypeError("Add operation can only be performed on two resources of the same type")
+        return Ash(self.amount + other.amount)
+
+    def __sub__(self, other):
+        if type(other) is not Ash:
+            raise TypeError("Sub operation can only be performed on two resources of the same type")
+        return Ash(self.amount - other.amount)
+
+    def getCostImage(self, temple: str) -> Image:
+        if self.amount > 3:
+            img = Image.open(f"assets/costs/ash/ash_{self.amount}.png").convert("RGBA")
+            return change_cost_color(img, temple)
+        img = Image.open("assets/costs/ash/ash.png").convert("RGBA")
+        version_img = change_cost_color(img, temple)
+        duplicate_image = version_img.copy()
+        final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
+        final_image = Image.new('RGBA', (final_width, version_img.height))
+        final_image.paste(version_img, (0, 0))
+        for i in range(self.amount - 1):
+            paste_position = (version_img.width + (duplicate_image.width - 10) * i - 10, 0)
+            final_image.paste(duplicate_image, paste_position, duplicate_image)
+        return final_image
+    
+class Coral:
+    def __init__(self, amount: int):
+        self.amount = amount
+
+    def __add__(self, other):
+        if type(other) is not Coral:
+            raise TypeError("Add operation can only be performed on two resources of the same type")
+        return Coral(self.amount + other.amount)
+
+    def __sub__(self, other):
+        if type(other) is not Coral:
+            raise TypeError("Sub operation can only be performed on two resources of the same type")
+        return Coral(self.amount - other.amount)
+
+    def getCostImage(self, temple: str) -> Image:
+        if self.amount > 3:
+            img = Image.open(f"assets/costs/coral/coral_{self.amount}.png").convert("RGBA")
+            return change_cost_color(img, temple)
+        img = Image.open("assets/costs/coral/coral.png").convert("RGBA")
+        version_img = change_cost_color(img, temple)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -647,7 +750,13 @@ def get_cost(strcost):
             elif "seed" in c or "seeds" in c:
                 cost.append(Seeds(int(c.split(" ")[0])))
             elif "stardust" in c:
-                cost.append(Stardust(int(c.split("")[0])))
+                cost.append(Stardust(int(c.split(" ")[0])))
+            elif "gasoline" in c:
+                cost.append(Gasoline(int(c.split(" ")[0])))
+            elif "ash" in c:
+                cost.append(Ash(int(c.split(" ")[0])))
+            elif "coral" in c:
+                cost.append(Coral(int(c.split(" ")[0])))
             # Add custom costs here with other elif
             else:
                 raise KeyError(f"Unknown cost type: {c}")
