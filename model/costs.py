@@ -274,13 +274,13 @@ class Blackout:
         if self.amount > 0:
             i = self.amount
             pos1 = round(i%10)
-            pastepos1 = (130, 20)
+            pastepos1 = (130, 10)
             i = i/10
             pos2 = round(i%10)
-            pastepos2 = (70, 20)
+            pastepos2 = (70, 10)
             i = i/10
             pos3 = round(i)
-            pastepos3 = (10, 20)
+            pastepos3 = (10, 10)
             pos1Image = Image.open(f"assets/costs/blackout/blackout_{str(pos1)}.png").convert("RGBA")
             newPos1Image = change_cost_color(pos1Image, temple)
             pos2Image = Image.open(f"assets/costs/blackout/blackout_{str(pos2)}.png").convert("RGBA")

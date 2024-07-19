@@ -89,7 +89,7 @@ attack_sigil_on_power_stat = true
 # Text sizes for cards
 name = 110          # Card upper_name text size (Default: 110)
 stats = 110         # Card stats text size (Default: 110)
-flavor_text = 38    # Flavor text size (Default: 45)
+flavor_text = 32    # Flavor text size (Default: 45)
 
 # Indicates the order of temples. Used to determine which variant of a sprite to take.
 # (Default: ["Beast", "Undead", "Tech", "Magick", "Alchemy"])
