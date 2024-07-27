@@ -22,6 +22,20 @@ Although I did create a few assets, most graphics were made by these wonderful c
 More precise credit on the card art is listed in the base cards.csv data files.
 
 # How to install
+
+## Python:
+1. Open the [Python Page](https://www.python.org/downloads/release/python-3110/)
+2. Navigate to `Files` and press `Windows installer (64-bit)`
+3. Save the file wherever you would like
+4. Double click the application where you saved it or Right Click on the application than press `Open`
+5. Press `Customize Installation`
+6. Enable `Documentation`, `pip`, `tcl/tk and IDLE`, `Python test suite`, `py launcher`.
+7. Press `Next`
+8. Tick `Associate files with Python (requires the py launcher)` and `Create shortcuts for installed applications` on
+9. Press `Install` and wait
+10. Press `Close`
+
+## The Generator:
 Before launching anything, launch the `install.bat` file. This will ensure you have all of the required dependencies that the project uses.
 Once that's done, you're pretty much good to go! Although, you obviously do need to have python installed for this entire project to work.
 
