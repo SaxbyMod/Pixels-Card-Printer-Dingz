@@ -733,7 +733,7 @@ def get_cost(strcost):
                     cost.append(chemicals)
             elif "blackout" in c:
                 cost.append(Blackout(int(c.split(" ")[0])))
-            elif "skulls" in c:
+            elif "skulls" in c or "skull" in c:
                 cost.append(Skulls(int(c.split(" ")[0])))
             elif "sun" in c:
                 cost.append(Sun(int(c.split(" ")[0])))

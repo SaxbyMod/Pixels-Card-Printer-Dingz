@@ -293,3 +293,5 @@ Wild Reshape,"On your next draw step, place your deck's top card in this card's 
 Witching Hour,All Spectre cards you control have 1 more power.,T,
 Worthy Sacrifice,This card provides 3 [resource:blood] blood when sacrificed.,,
 Yeetbot,"During your play step, discard a ""TOKEN"" from your hand to deal 3 damage to any card on the field.",T,
+Killing Scene,"When this card or another 'Phone' or 'Spectral' card on your side of the field kill a card, search one 'Phone' or 'Spectral' card from your main deck or discard pile.",,
+Spectral Calling,"This card's power is equal to the amount of 'Phone' or 'Spectral' cards on your side of the field.",,

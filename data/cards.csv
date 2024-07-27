@@ -2,4 +2,5 @@ Card Name,Temple,Tier,Cost,Power,Health,Sigils,Token,Traits,Tribes,Flavor Text,C
 Cat with a Gun,Tech,Uncommon,13 coral,2,3,"Sniper, Energy Gun",,Boneless,Feline Bot,"You think this is funny, don't you?",Answearing Machine
 Nun Bot,Tech,Common,7 blackout,1,2,"Repulsive",,,Android,"An artifical Nun made to prevent wrong doing's.",None
 Broadcast System,Tech,Common,2 blackout,0,3,"Signal",,,Utility,"A system that broadcasts information from one source to another.",None
-Scarlet Swordsman,Magick,Common,1 garnet + 1 ruby + 1 sapphire + 1 emerald + 1 onyx + 1 topaz + 1 amethyst + 1 prism,1,2,"Dexter Strike",,"Strike Requirement","War Swordsman","Born in a time of war, he has a learned a special \n technique allowing him to deal with three enemies at once.",None
+Scarlet Swordsman,Magick,Common,1 garnet + 1 ruby,1,2,"Dexter Strike",,"Strike Requirement","War Swordsman","Born in a time of war, he has a learned a special \n technique allowing him to deal with three enemies at once.",None
+Ghostface,Undead,Rare,5 skulls + 2 overheat,0,3,"Spectral Calling, Killing Scene",,,"Spectral","*Ring-Ring* Do you like scary cards? Whats your favorite scary card?",Creator

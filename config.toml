@@ -84,7 +84,7 @@ show_bloodless_text = false         # Display bloodless as sigil or trait (Defau
 remove_power_stat_when_attack_sigil_present = true  # Remove power stat when determined by a sigil (Default: true)
 # Display attack sigil on top of power stat. Transforms the sigil into a trait. (Default: true)
 # Careful ! If turned on, the above option will not matter.
-attack_sigil_on_power_stat = true
+attack_sigil_on_power_stat = false
 
 # Text sizes for cards
 name = 110          # Card upper_name text size (Default: 110)
@@ -138,12 +138,14 @@ max_rare_height.Undead = 1430   # Default: 1430
 max_rare_height.Tech = 1430     # Default: 1430
 max_rare_height.Magick = 1430   # Default: 1430
 max_rare_height.Alchemy = 1410  # Default: 1410
+max_rare_height.Frequency = 1380
 # Height limit for rare terrain cards' sigils vary from temple to temple.
 max_rare_terrain_height.Beast = 1430    # Default: 1430
 max_rare_terrain_height.Undead = 1430   # Default: 1430
 max_rare_terrain_height.Tech = 1430     # Default: 1430
 max_rare_terrain_height.Magick = 1430   # Default: 1430
 max_rare_terrain_height.Alchemy = 1410  # Default: 1410
+max_rare_terrain_height.Frequency = 1380
 
 # Coordinates of the power stat for each attack mark.
 power_coord.Terrain = [193, 885]    # Default: [193, 885]

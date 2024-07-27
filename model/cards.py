@@ -141,15 +141,18 @@ def write_name(image, draw, name):
 
 
 def write_flavor_text(draw, font, flavor_text, temple):
-    flavor_text: str = flavor_text.replace("\r", "").replace("\n", " ").replace('"', "''")
+    flavor_text: str = flavor_text.replace("\r", "").replace('"', "''")
     if flavor_text != "BLANK":
-        while draw.textlength(flavor_text, font=font) > config['max_flavor_text_width']:
-            limit = flavor_text.rfind(" ") if " " in flavor_text else -6
-            flavor_text = flavor_text[:limit] + "..."
-            flavor_text += "''" if "''" in flavor_text else ""
-        flavor_text_x = 300 + (700 - draw.textlength(flavor_text, font=font)) // 2
-        draw.text((flavor_text_x, config['flavor_text_top_height']), flavor_text, fill=TEXT_COLORS[temple],
-                  font=font)
+        lines = flavor_text.split("\n")
+        y_offset = config['flavor_text_top_height']
+        for line in lines:
+            while draw.textlength(line, font=font) > config['max_flavor_text_width']:
+                limit = line.rfind(" ") if " " in line else -6
+                line = line[:limit] + "..."
+                line += "''" if "''" in line else ""
+            flavor_text_x = 300 + (700 - draw.textlength(line, font=font)) // 2
+            draw.text((flavor_text_x, y_offset), line, fill=TEXT_COLORS[temple], font=font)
+            y_offset += 36
 
 
 def write_card_description(image, draw, font, temple, tier, tribes):
