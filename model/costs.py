@@ -13,20 +13,42 @@ def get_temple_variant(image, temple):
     bottom = (version_index + 1) * version_height
     return image.crop((0, top, width, bottom))
 
-def change_cost_color(image, temple):
+def change_cost_color(image, temple, tier=""):
     if temple not in TEMPLES:
         raise ValueError(f"'{temple}' is not a valid temple.")
     for x in range(image.width):
         for y in range(image.height):
-            current_pixel = image.getpixel((x, y))[:3]
-            if current_pixel == (190, 117, 65):
-                image.putpixel((x, y), config["light_tone"][temple])
-            elif current_pixel == (125, 78, 48):
-                image.putpixel((x, y), config["text_colors"][temple])
-            elif current_pixel == (78, 50, 38):
-                image.putpixel((x, y), config["dark_tone"][temple])
-            elif current_pixel == (64, 42, 33):
-                image.putpixel((x, y), config["darker_tone"][temple])
+            if [temple] == "Terrain":
+                if [tier] == "Rare" or [tier] == "Talking":
+                    current_pixel = image.getpixel((x, y))[:3]
+                    if current_pixel == (190, 117, 65):
+                        image.putpixel((x, y), config["light_tone"][temple]["Golden"])
+                    elif current_pixel == (125, 78, 48):
+                        image.putpixel((x, y), config["text_colors"][temple]["Golden"])
+                    elif current_pixel == (78, 50, 38):
+                        image.putpixel((x, y), config["dark_tone"][temple]["Golden"])
+                    elif current_pixel == (64, 42, 33):
+                        image.putpixel((x, y), config["darker_tone"][temple]["Golden"])
+                else:
+                    current_pixel = image.getpixel((x, y))[:3]
+                    if current_pixel == (190, 117, 65):
+                        image.putpixel((x, y), config["light_tone"][temple]["Normal"])
+                    elif current_pixel == (125, 78, 48):
+                        image.putpixel((x, y), config["text_colors"][temple]["Normal"])
+                    elif current_pixel == (78, 50, 38):
+                        image.putpixel((x, y), config["dark_tone"][temple]["Normal"])
+                    elif current_pixel == (64, 42, 33):
+                        image.putpixel((x, y), config["darker_tone"][temple]["Normal"])
+            else:
+                current_pixel = image.getpixel((x, y))[:3]
+                if current_pixel == (190, 117, 65):
+                    image.putpixel((x, y), config["light_tone"][temple])
+                elif current_pixel == (125, 78, 48):
+                    image.putpixel((x, y), config["text_colors"][temple])
+                elif current_pixel == (78, 50, 38):
+                    image.putpixel((x, y), config["dark_tone"][temple])
+                elif current_pixel == (64, 42, 33):
+                    image.putpixel((x, y), config["darker_tone"][temple])
     return image
 
 class Blood:

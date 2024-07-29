@@ -93,7 +93,7 @@ flavor_text = 32    # Flavor text size (Default: 45)
 
 # Indicates the order of temples. Used to determine which variant of a sprite to take.
 # (Default: ["Beast", "Undead", "Tech", "Magick", "Alchemy"])
-temples = ["Beast", "Undead", "Tech", "Magick", "Alchemy", "Frequency"]
+temples = ["Beast", "Undead", "Tech", "Magick", "Alchemy", "Frequency", "Terrain"]
 
 text_colors.Beast = [125, 78, 48]       # Beast temple flavor text color (Default: [125, 78, 48])
 text_colors.Undead = [106, 112, 84]     # Undead temple flavor text color (Default: [106, 112, 84])
@@ -101,6 +101,8 @@ text_colors.Tech = [73, 123, 156]       # Tech temple flavor text color (Default
 text_colors.Magick = [156, 73, 128]     # Magick temple flavor text color (Default: [156, 73, 128])
 text_colors.Alchemy = [109, 70, 49]     # Alchemy temple flavor text color (Default: [109, 70, 49])
 text_colors.Frequency = [52, 76, 70]
+text_colors.Terrain.Golden = [164, 89, 62]
+text_colors.Terrain.Normal = [99, 95, 88]
 
 # Shades for temples
 
@@ -111,6 +113,8 @@ light_tone.Tech = [97, 170, 194]
 light_tone.Magick = [203, 102, 125]
 light_tone.Alchemy = [139, 103, 75]
 light_tone.Frequency = [69, 102, 94]
+light_tone.Terrain.Golden = [199, 137, 81]
+light_tone.Terrain.Normal = [151, 141, 122]
 # Dark Tones
 dark_tone.Beast = [78, 50, 38]
 dark_tone.Undead = [60, 73, 55]
@@ -118,6 +122,8 @@ dark_tone.Tech = [33, 71, 99]
 dark_tone.Magick = [95, 32, 69]
 dark_tone.Alchemy = [92, 52, 30]
 dark_tone.Frequency = [35, 50, 47]
+dark_tone.Terrain.Golden = [99, 34, 21]
+dark_tone.Terrain.Normal = [69, 64, 60]
 # Darker Tones
 darker_tone.Beast = [64, 42, 33]
 darker_tone.Undead = [48, 59, 43]
@@ -125,6 +131,8 @@ darker_tone.Tech = [24, 55, 78]
 darker_tone.Magick = [81, 24, 57]
 darker_tone.Alchemy = [74, 39, 20]
 darker_tone.Frequency = [28, 37, 35]
+darker_tone.Terrain.Golden = [51, 13, 5]
+darker_tone.Terrain.Normal = [34, 33, 32]
 
 
 # Sigil height limits for each outline. Common heights also serve as talking and side deck heights.
@@ -138,6 +146,7 @@ max_rare_height.Undead = 1430   # Default: 1430
 max_rare_height.Tech = 1430     # Default: 1430
 max_rare_height.Magick = 1430   # Default: 1430
 max_rare_height.Alchemy = 1410  # Default: 1410
+max_rare_height.Terrain = 1430
 max_rare_height.Frequency = 1380
 # Height limit for rare terrain cards' sigils vary from temple to temple.
 max_rare_terrain_height.Beast = 1430    # Default: 1430
@@ -146,6 +155,7 @@ max_rare_terrain_height.Tech = 1430     # Default: 1430
 max_rare_terrain_height.Magick = 1430   # Default: 1430
 max_rare_terrain_height.Alchemy = 1410  # Default: 1410
 max_rare_terrain_height.Frequency = 1380
+max_rare_terrain_height.Terrain = 1430
 
 # Coordinates of the power stat for each attack mark.
 power_coord.Terrain = [193, 885]    # Default: [193, 885]
@@ -155,6 +165,7 @@ power_coord.Tech = [198, 885]       # Default: [198, 885]
 power_coord.Magick = [198, 885]     # Default: [198, 885]
 power_coord.Alchemy = [198, 885]    # Default: [198, 885]
 power_coord.Frequency = [198, 885]  # Default: [198, 885]
+power_coord.Terrain = [198, 885]    # Default: [198, 885]
 # Box for the attack sigil to go on the power stat for each attack mark (only if attack_sigil_on_power_stat is on)
 attack_sigil_box.Terrain = [130, 840, 300, 1020]    # Default: [130, 840, 300, 1020]
 attack_sigil_box.Beast = [130, 840, 310, 1010]      # Default: [130, 840, 310, 1010]
@@ -163,6 +174,7 @@ attack_sigil_box.Tech = [120, 830, 320, 1030]       # Default: [120, 830, 320, 1
 attack_sigil_box.Magick = [130, 840, 310, 1030]     # Default: [130, 840, 310, 1030]
 attack_sigil_box.Alchemy = [140, 820, 330, 1030]    # Default: [140, 820, 330, 1030]
 attack_sigil_box.Frequency = [130, 840, 310, 1020]
+attack_sigil_box.Terrain = [130, 820, 300, 1020]
 
 # Card export settings
 export_sorted_by_folder = true  # Will create folders for each temple and tier to sort the cards when exporting them.
