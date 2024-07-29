@@ -18,7 +18,10 @@ with open(path, 'r') as f:
     config["export_color"] = tuple(config["export_color"])
     for dictionary in ['text_colors', 'power_coord', 'light_tone', 'dark_tone', 'darker_tone']:
         for key in config[dictionary]:
-            config[dictionary][key] = tuple(config[dictionary][key])
+            if config[dictionary] == "text_colors" or config[dictionary] == "light_tone" or config[dictionary] == "dark_tone" or config[dictionary] == "darker_tone":
+                config[dictionary][key][key] = tuple(config[dictionary][key][key])
+            else:
+                config[dictionary][key] = tuple(config[dictionary][key])
 
     if not os.path.exists(config["cards_file_path"]):
         config["cards_file_path"] = "../" + config["cards_file_path"]
