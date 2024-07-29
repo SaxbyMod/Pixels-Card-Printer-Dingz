@@ -25,8 +25,9 @@ Bell Ringer,"Each time the bell is rung this card gains 1 power, to a maximum of
 Bifurcated Strike,This card only strikes both adjacent spaces to the opposing space. Additional power only apply to the first strike.,T,
 Blood Battery,"Every 4 [resource:energy] energy you spend in a single turn, gain a blood token. These can serve as substitute for 1 [resource:blood] blood when playing a card.",,
 Blood Conduit,"If you control another Conduit card, this one will not perish when sacrificed.",T,
+Bloodfiend,"When this card kills another card, this card gains +2 power to a maximum of 5."
 Bloodless,This card cannot be sacrificed.,,
-Bloodlust,"Each time this card kills another, it gains 1 power.",T,
+Bloodlust,"When this card kills another card, this card gains +1 power, to a maximum of 5 above its base power.",T,
 Bloodsucker,"After this card damages another it gains 1 health, up to 5.",T,
 Bloody Hemanation,"When sacrificed toggle this card's [mark:transform] Transform mark. While marked, it provides 3 [resource:blood] blood when sacrificed.",,
 Blue Conduit,"If you control another Conduit card, this one provides one [resource:blue_gem] Blue gem.",,
@@ -48,6 +49,7 @@ Circuit Latch,"When this card perishes by combat, choose any card on the field. 
 Clinger,"Each time you place a card, move this card to the closest open space between them.",T,
 Cold Read,"When played, write down the full name of any Common card. Each time it is played by anyone, this card gains 1 power, up to 5.",T,
 Colony,This card's power is equal to the number of other Ant cards you control.,T,T
+Comforting Aura,"During your end step, the cards left and right of this card gain +2 health, to a maximum of 3 above the base cards health."
 Convalesce,"During your end step this card gains 1 health, to a maximum of 5.",T,
 Corpse Eater,"When a card you control perishes in combat, you may place this card in its space.",T,
 Creeping Outwards,"On the second draw step after this card was played, search a ""TOKEN"" and play it over this.",T,

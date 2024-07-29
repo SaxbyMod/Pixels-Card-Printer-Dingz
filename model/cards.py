@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from model import config, logging, sigils, costs
 from unidecode import unidecode
+from datetime import date, time, datetime
 
 TEMPLES = config['temples']
 TEXT_COLORS = config['text_colors']
@@ -166,8 +167,16 @@ def write_card_description(image, draw, font, temple, tier, tribes):
     desc_x = (image.width - draw.textlength(description, font=font)) // 2
     draw.text((desc_x, desc_y), description, fill=TEXT_COLORS[temple], font=font)
 
+def write_portrait_artist(image, draw, font, artist, temple):
+    current_date_time = datetime.now().strftime('%d-%m-%Y, %H:%M:%S')
+    description = f"Artist: {artist}, Format: Dingz Megamix, Printed At: {current_date_time}"
+    desc_y = config['artist_bottom_height']
+    desc_x = (image.width - draw.textlength(description, font=font)) // 2
+    draw.text((desc_x, desc_y), description, fill=TEXT_COLORS[temple], font=font)
 
-def draw_text(image, name, tier, temple, tribes, flavor_text):
+
+
+def draw_text(image, name, tier, temple, tribes, flavor_text, artist):
     draw = ImageDraw.Draw(image)
     heavyweight_font = ImageFont.truetype(FONT, config['flavor_text'])
 
@@ -180,6 +189,7 @@ def draw_text(image, name, tier, temple, tribes, flavor_text):
     # Write tribes, tier and temple
     if config["write_card_description"]:
         write_card_description(image, draw, heavyweight_font, temple, tier, tribes)
+    write_portrait_artist(image, draw, heavyweight_font, artist, temple)
 
 
 def draw_conduit_indicator(image, conduit_img):
@@ -337,7 +347,7 @@ def create_card(csv_dict):
         conduit_img = Image.open(f"assets/conduit_indicators/{conduit}.png").convert("RGBA")
 
     # Write text
-    draw_text(image, name, tier, temple, tribes, csv_dict["Flavor Text"])
+    draw_text(image, name, tier, temple, tribes, csv_dict["Flavor Text"], csv_dict["Credit"])
 
     # Generate sigils and traits
 

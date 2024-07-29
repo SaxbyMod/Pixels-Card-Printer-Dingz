@@ -181,6 +181,7 @@ cost_right_border = 990         # Right border for drawing cost (Default: 990)
 health_coord = [893, 223]       # Coordinates of the health stat (Default: [893, 223])
 
 description_top_height = 15     # Top height for writing card description (Default: 15)
+artist_bottom_height = 1520
 
 conduit_top_height = 1005       # Top height for drawing conduit indicators (Default: 1005)
 
