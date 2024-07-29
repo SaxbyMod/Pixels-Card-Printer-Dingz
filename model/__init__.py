@@ -16,12 +16,9 @@ with open(path, 'r') as f:
     config = toml.load(f)
 
     config["export_color"] = tuple(config["export_color"])
-    for dictionary in ['text_colors', 'power_coord', 'light_tone', 'dark_tone', 'darker_tone']:
+    for dictionary in ['text_colors', 'power_coord', 'light_tone', 'dark_tone', 'darker_tone', 'text_colors_normal', 'light_tone_normal', 'dark_tone_normal', 'darker_tone_normal', 'text_colors_golden', 'light_tone_golden', 'dark_tone_golden', 'darker_tone_golden']:
         for key in config[dictionary]:
-            if config[dictionary] == "text_colors" or config[dictionary] == "light_tone" or config[dictionary] == "dark_tone" or config[dictionary] == "darker_tone":
-                config[dictionary][key][key] = tuple(config[dictionary][key][key])
-            else:
-                config[dictionary][key] = tuple(config[dictionary][key])
+            config[dictionary][key] = tuple(config[dictionary][key])
 
     if not os.path.exists(config["cards_file_path"]):
         config["cards_file_path"] = "../" + config["cards_file_path"]

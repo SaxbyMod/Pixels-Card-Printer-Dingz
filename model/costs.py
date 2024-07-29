@@ -18,27 +18,27 @@ def change_cost_color(image, temple, tier=""):
         raise ValueError(f"'{temple}' is not a valid temple.")
     for x in range(image.width):
         for y in range(image.height):
-            if [temple] == "Terrain":
+            if [temple] == "Structure":
                 if [tier] == "Rare" or [tier] == "Talking":
                     current_pixel = image.getpixel((x, y))[:3]
                     if current_pixel == (190, 117, 65):
-                        image.putpixel((x, y), config["light_tone"][temple]["Golden"])
+                        image.putpixel((x, y), config["light_tone_golden"][temple])
                     elif current_pixel == (125, 78, 48):
-                        image.putpixel((x, y), config["text_colors"][temple]["Golden"])
+                        image.putpixel((x, y), config["text_colors_golden"][temple])
                     elif current_pixel == (78, 50, 38):
-                        image.putpixel((x, y), config["dark_tone"][temple]["Golden"])
+                        image.putpixel((x, y), config["dark_tone_golden"][temple])
                     elif current_pixel == (64, 42, 33):
-                        image.putpixel((x, y), config["darker_tone"][temple]["Golden"])
+                        image.putpixel((x, y), config["darker_tone_golden"][temple])
                 else:
                     current_pixel = image.getpixel((x, y))[:3]
                     if current_pixel == (190, 117, 65):
-                        image.putpixel((x, y), config["light_tone"][temple]["Normal"])
+                        image.putpixel((x, y), config["light_tone_normal"][temple])
                     elif current_pixel == (125, 78, 48):
-                        image.putpixel((x, y), config["text_colors"][temple]["Normal"])
+                        image.putpixel((x, y), config["text_colors_normal"][temple])
                     elif current_pixel == (78, 50, 38):
-                        image.putpixel((x, y), config["dark_tone"][temple]["Normal"])
+                        image.putpixel((x, y), config["dark_tone_normal"][temple])
                     elif current_pixel == (64, 42, 33):
-                        image.putpixel((x, y), config["darker_tone"][temple]["Normal"])
+                        image.putpixel((x, y), config["darker_tone_normal"][temple])
             else:
                 current_pixel = image.getpixel((x, y))[:3]
                 if current_pixel == (190, 117, 65):
@@ -690,7 +690,7 @@ def get_cost(strcost):
         for c in strcost.split(" + "):
             if "blood" in c:
                 cost.append(Blood(int(c.split(" ")[0])))
-            elif "bone" in c:
+            elif "bone" in c or "bones" in c:
                 cost.append(Bones(int(c.split(" ")[0])))
             elif "energy" in c or "overcharge" in c or "overheat" in c or "renew" in c or "reroute" in c or "shortage" in c:
                 energy = None
