@@ -2,10 +2,11 @@ Card Name,Temple,Tier,Cost,Power,Health,Sigils,Token,Traits,Tribes,Flavor Text,C
 Cat with a Gun,Tech,Uncommon,13 coral,2,3,"Sniper, Energy Gun",,Boneless,Feline Bot,"You think this is funny, don't you?",Answearing Machine
 Nun Bot,Tech,Common,7 blackout,1,2,"Repulsive",,,Android,"An artifical Nun made to prevent wrong doing's.",None
 Broadcast System,Tech,Common,2 blackout,0,3,"Signal",,,Utility,"A system that broadcasts information from one source to another.",None
-Scarlet Swordsman,Magick,Common,1 garnet + 1 ruby,1,2,"Dexter Strike",,"Strike Requirement","War Swordsman","Born in a time of war, he has a learned a special \n technique allowing him to deal with three enemies at once.",None
+Scarlet Swordsman,Magick,Common,1 garnet + 1 ruby,1,2,"Dexter Strike",,"Strike Requirement","War Swordsman","Born in a time of war, he has a learned a special \ntechnique allowing him to deal with three enemies at once.",None
 Ghostface,Undead,Rare,5 skulls + 2 overheat,0,3,"Spectral Calling, Killing Scene",,,"Spectral","*Ring-Ring* Do you like scary cards? Whats your favorite scary card?",Creator
 Brutalist Beast,Magick,Talking,2 rubies,1,3,"Bloodfiend",,,"Swordsman","""God F*$%ing Dammit, Drow Knight!!! Why am I always dragged here with you?!?!""",Desaft
 Drow Knight,Magick,Talking,2 sapphires,3,1,"Airborne",,,"Sky",""".    .    .""",Desaft
 Dark Sage,Magick,Talking,2 emeralds,0,2,"Comforting Aura",,,"""Healer","Golly! So many new faces to see around here!! I excite!!""",Desaft
-Dam,Structure,Common,2 Bones,0,2,"Bloodless",,,"Structure","What a Quaint little home, Made from the remains of dead trees.",Pixel Profilgate
-Chime,Structure,Rare,1 Bone,0,2,"Bloodless",,,"Structure","A chime, found by a curious fella to help ward off the enemy.",Pixel Profilgate
+Dam,Structure,Common,2 bones,0,2,"Bloodless",,,"Structure","What a Quaint little home, Made from the remains of dead trees.",Pixel Profilgate
+Chime,Structure,Rare,1 bone,0,2,"Bloodless",,,"Structure","A chime, found by a curious fella to help ward off the enemy.",Pixel Profilgate
+The Stoat,Beast,Talking,1 blood,1,3,"Battery Gambler",,,"Vermin","""Why what a toatal misplay! Why choose me, there \nare sooo many better options!""",Pixel Profilgate

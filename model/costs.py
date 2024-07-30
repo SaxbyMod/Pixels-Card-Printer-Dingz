@@ -1,5 +1,6 @@
 from PIL import Image
-from model import config, logging
+from model import config, logging, cards
+from csv import DictReader
 
 TEMPLES = config["temples"]
 

@@ -142,9 +142,9 @@ def write_name(image, draw, name):
 
 
 def write_flavor_text(draw, font, flavor_text, temple):
-    flavor_text: str = flavor_text.replace("\r", "").replace('"', "''")
+    flavor_text: str = flavor_text.replace("\r", "").replace('"', "''").replace("\\n","\n")
     if flavor_text != "BLANK":
-        lines = flavor_text.split("\n")
+        lines = flavor_text.split("\\n")
         y_offset = config['flavor_text_top_height']
         for line in lines:
             while draw.textlength(line, font=font) > config['max_flavor_text_width']:
