@@ -1,12 +1,29 @@
 Card Name,Temple,Tier,Cost,Power,Health,Sigils,Token,Traits,Tribes,Flavor Text,Credit
-Cat with a Gun,Tech,Uncommon,13 coral,2,3,"Sniper, Energy Gun",,Boneless,Feline Bot,"You think this is funny, don't you?",Answearing Machine
-Nun Bot,Tech,Common,7 blackout,1,2,"Repulsive",,,Android,"An artifical Nun made to prevent wrong doing's.",None
-Broadcast System,Tech,Common,2 blackout,0,3,"Signal",,,Utility,"A system that broadcasts information from one source to another.",None
-Scarlet Swordsman,Magick,Common,1 garnet + 1 ruby,1,2,"Dexter Strike",,"Strike Requirement","War Swordsman","Born in a time of war, he has a learned a special \ntechnique allowing him to deal with three enemies at once.",None
-Ghostface,Undead,Rare,5 skulls + 2 overheat,0,3,"Spectral Calling, Killing Scene",,,"Spectral","*Ring-Ring* Do you like scary cards? Whats your favorite scary card?",Creator
-Brutalist Beast,Magick,Talking,2 rubies,1,3,"Bloodfiend",,,"Swordsman","""God F*$%ing Dammit, Drow Knight!!! Why am I always dragged here with you?!?!""",Desaft
+Squirrel,Beast,Side Deck,Free,0,1,,,,"Vermin","Small, Frail, Weak, and feels every ounce of pain,\nbut with sacrifice comes value.",Pixel Profligate
+Squirrel Ball,Beast,Common,1 blood,0,2,"Squirrel Shedder",,,"Vermin","An odd amount of squirrels curled up in a ball,\nshedding some as it moves around.",Pixel Profligate
+Mirror Tentacle,Beast,Common,1 blood,X,3,"Facsimile",,,"Tentacle","Curious...\nI'm... not actually sure what this does...",Pixel Profligate
+Hand Tentacle,Beast,Common,1 blood,X,1,"Strong Hand",,,"Tentacle","Strange...\nDid I do that...?",Pixel Profligate
+Bell Tentacle,Beast,Common,2 blood,0,2,"Bell Ringer",,,"Tentacle","Interesting...\nHm... I don’t recall making that one...",Pixel Profligate
+Really Cool Dog,Beast,Rare,2 blood,2,1,"Ice Cold, Guardian",,,"Canine","Be careful, for if you call him cute he will\nbite a hole straight through your leg.",Desaft
+Moose Buck,Beast,Common,3 blood,3,7,"Hefty",,,"Hooved","A massive brute of a beast, keep an eye out or it will\npush you along with it while moving.",Pixel Profligate
+Worker Ant,Beast,Common,1 blood,X,2,"Colony",,,"Ant Insect","What may be a measly worker ant right now,\ncan become an overwhelming force of ant's quickly.",Pixel Profligate
+Wolf,Beast,Common,2 blood,3,2,,,,"Canine","A proud and vicious predator, in packs or by lonesome\nit will rend its prey.",Pixel Profligate
+Adder,Beast,Common,2 blood,1,2,"Touch of Death",,,"Reptile","From under the brush comes its venomous bite,\neven a simple bite will kill.",Pixel Profligate
+Raven Egg,Beast,Common,1 blood,0,2,"Fledgling","Raven",,"Avian","An egg from a clever bird, even threatening\nin this state, soon it will become a blight of a bird.",Pixel Profligate
+Salmon,Beast,Common,2 blood,2,2,"Sprinter, Waterborne",,,"Aquatic","A surprisingly strong fish, with the power\nof attacking its prey then quickly slipping away.",Pixel Profligate
+Great White,Beast,Common,3 blood,4,2,"Waterborne",,"Target Required","Aquatic","It can smell a drop of blood from miles away,\nonce it does it will come to its prey immediately.",Pixel Profligate
+Bloodhound,Beast,Common,2 blood,2,3,"Guardian, Hounding",,,"Canine","A mans best friend specialized in defending its owner\nit will pounce in front of anything it doesnt trust.", Pixel Profligate
+Ant Queen,Beast,Common,2 blood,1,3,"Colony (Unnerfed), Ant Spawner",,,"Ant Insect","The royal mother of all ants alike, if you see it\nkill it at first sight or there will be ants of plenty.",Pixel Profligate
+Sparrow,Beast,Common,1 blood,1,2,"Airborne, Tribe Hatred","Insect",,"Avian","The meek and feeble sparrow, it gathers insects to\nfeed its offspring, and also to eat for themselves.",Pixel Profligate
+Kingfisher,Beast,Common,1 blood,1,2,"Airborne, Waterborne",,,"Avian","A swift bird of its calibar, it swims to avoid its\npredators and flys to avoid its prey.",Pixel Profligate
+Wolf Cub,Beast,Common,1 blood,1,1,"Fledgling","Wolf",,"Canine","An ambitious young pup, mind you it is a feisty one,\nand as soon as it grows up your in for a treat!",Pixel Profligate
+Bullfrog,Beast,Common,1 blood,1,2,"Mighty Leap",,,"Aquatic Reptile","It watches and sees everything and especially keeps an\neye out for creatures that are above them.", Pixel Profligate
+Black Goat,Beast,Uncommon,1 blood,0,1,"Worthy Sacrifice",,,"Hooved","A truly worthy sacrifice, the black goat is one of\nthe greatest honor you can grant for sacrifice.", Pixel Profligate
+Magpie,Beast,Uncommon,2 blood,1,2,"Hoarder, Airborne",,,"Avian","If its nice you will get treasure,\nhowever, if you're not nice, it will give you scrap.", Pixel Profligate
+The Stoat,Beast,Talking,1 blood,1,3,"Tribal Energizer",,,"Vermin","""Why what a total misplay! Why choose me, there\nare sooo many better options!""",Pixel Profligate
+Stinkbug,Beast,Talking,2 bones,1,2,"Stinky, Tribal Unburial",,,"Insect","""It is time my dear insect friends, time to scavenge\nfor some bones that is! NOW DIG!!""",Pixel Profligate
+Stunted Wolf,Beast,Talking,2 blood,2,2,"Tribal Prisms",,,"Canine","""A vacuous landscape fills my vision, illustrious and\nvariegated shall it be once more!""",Pixel Profligate
+Brutalist Beast,Magick,Talking,2 rubies,1,3,"Bloodfiend",,,"Swordsman","""God F*$%ing Dammit, Drow Knight!!! Why am I always\ndragged here with you?!?!""",Desaft
 Drow Knight,Magick,Talking,2 sapphires,3,1,"Airborne",,,"Sky",""".    .    .""",Desaft
-Dark Sage,Magick,Talking,2 emeralds,0,2,"Comforting Aura",,,"""Healer","Golly! So many new faces to see around here!! I excite!!""",Desaft
-Dam,Structure,Common,2 bones,0,2,"Bloodless",,,"Structure","What a Quaint little home, Made from the remains of dead trees.",Pixel Profilgate
-Chime,Structure,Rare,1 bone,0,2,"Bloodless",,,"Structure","A chime, found by a curious fella to help ward off the enemy.",Pixel Profilgate
-The Stoat,Beast,Talking,1 blood,1,3,"Battery Gambler",,,"Vermin","""Why what a toatal misplay! Why choose me, there \nare sooo many better options!""",Pixel Profilgate
+Dark Sage,Magick,Talking,2 emeralds,0,2,"Comforting Aura",,,"Healer","""Golly! So many new faces to see around here!! I excite!!""",Desaft
+Beehive,Structure,Common,1 blood,0,3,"Bees Within","Bee",,,"Be careful around this nest, many creatures lie within,\nready to sting you at any moment!",Pixel Profligate

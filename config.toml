@@ -84,7 +84,7 @@ show_bloodless_text = false         # Display bloodless as sigil or trait (Defau
 remove_power_stat_when_attack_sigil_present = true  # Remove power stat when determined by a sigil (Default: true)
 # Display attack sigil on top of power stat. Transforms the sigil into a trait. (Default: true)
 # Careful ! If turned on, the above option will not matter.
-attack_sigil_on_power_stat = false
+attack_sigil_on_power_stat = true
 
 # Text sizes for cards
 name = 110          # Card upper_name text size (Default: 110)
@@ -197,6 +197,6 @@ artist_bottom_height = 1520
 
 conduit_top_height = 1005       # Top height for drawing conduit indicators (Default: 1005)
 
-sigil_top_height = 1010         # Top height for drawing sigils (Default: 1010)
+sigil_top_height = 1030         # Top height for drawing sigils (Default: 1010)
 sigil_left_border = 120         # Left border for drawing sigils (Default: 120)
-sigil_lower_top_height = 1230   # Lower top height for drawing sigils (Default: 1230). Used for base game display.
+sigil_lower_top_height = 1250   # Lower top height for drawing sigils (Default: 1230). Used for base game display.

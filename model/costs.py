@@ -14,13 +14,13 @@ def get_temple_variant(image, temple):
     bottom = (version_index + 1) * version_height
     return image.crop((0, top, width, bottom))
 
-def change_cost_color(image, temple, tier=""):
+def change_cost_color(image, temple, tier):
     if temple not in TEMPLES:
         raise ValueError(f"'{temple}' is not a valid temple.")
     for x in range(image.width):
         for y in range(image.height):
-            if [temple] == "Structure":
-                if [tier] == "Rare" or [tier] == "Talking":
+            if temple == "Structure":
+                if tier == "Rare" or [tier] == "Talking":
                     current_pixel = image.getpixel((x, y))[:3]
                     if current_pixel == (190, 117, 65):
                         image.putpixel((x, y), config["light_tone_golden"][temple])
@@ -66,9 +66,9 @@ class Blood:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Blood(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         img = Image.open(f"assets/costs/blood/blood.png").convert("RGBA")
-        cost_img = change_cost_color(img, temple)
+        cost_img = change_cost_color(img, temple, tier)
         total_width = cost_img.width * self.amount
         final_img = Image.new('RGBA', (total_width, cost_img.height))
         for i in range(self.amount):
@@ -90,12 +90,12 @@ class Bones:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Bones(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 4:
             img = Image.open(f"assets/costs/bones/bones{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/bones/bones.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -124,7 +124,7 @@ class Energy:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Energy(self.energy - other.energy, self.overcharge - other.overcharge, self.overheat - other.overheat, self.renew - other.renew, self.reroute - other.reroute, self.shortage - other.shortage)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         first_cell = change_cost_color(Image.open(f"assets/costs/cell_first.png"), temple)
         cell = change_cost_color(Image.open(f"assets/costs/cell.png"), temple)
 
@@ -214,17 +214,17 @@ class Gems:
         return Gems(*self.gems[:])
 
     @staticmethod
-    def getGemImage(gem, temple) -> Image:
+    def getGemImage(gem, temple, tier) -> Image:
         shatter = "shattered_" if "shattered" in gem else ""
         gem = gem.split(" ")[-1].lower()
         color = dict(emeralds="emerald", sapphires="sapphire", rubies="ruby", topazes="topaz", amethysts="amethyst", garnets="garnet", onyxs="onyx", prisms="prism").get(gem, gem)
         img = Image.open(f"assets/costs/gems/{shatter}{color.lower()}.png").convert("RGBA")
-        return change_cost_color(img, temple)
+        return change_cost_color(img, temple, tier)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         gem_images = []
         for gem in self.gems:
-            image = self.getGemImage(gem, temple)
+            image = self.getGemImage(gem, temple, tier)
             for _ in range(int(gem.split(" ")[0])):
                 gem_images.append(image)
         total_width = sum(img.width for img in gem_images) - (len(gem_images) - 1) * 10
@@ -261,7 +261,7 @@ class Alchemy:
     def copy(self):
         return Alchemy(*self.chemicals[:])
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         chemical_images = []
         for chemical in self.chemicals:
             name = chemical.split(" ")[-1].lower()
@@ -291,7 +291,7 @@ class Blackout:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Blackout(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         baseImage = Image.open("assets/costs/blackout_bar.png").convert("RGBA")
         newBaseImage = change_cost_color(baseImage, temple)
         if self.amount > 0:
@@ -333,12 +333,12 @@ class Skulls:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Skulls(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 4:
             img = Image.open(f"assets/costs/skulls/skull_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/skulls/skull.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -362,12 +362,12 @@ class Sun:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Sun(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/sun/sun_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/sun/sun.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -391,7 +391,7 @@ class Frequency:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Frequency(self.amount - other.amount)
     
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         baseImage = Image.open("assets/costs/frequency_bar.png").convert("RGBA")
         newBaseImage = change_cost_color(baseImage, temple)
         if self.amount > 0:
@@ -436,12 +436,12 @@ class Teeth:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Teeth(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/teeth/teeth_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/teeth/tooth.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -465,12 +465,12 @@ class Bile:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Bile(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/bile/bile_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/bile/bile.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -494,12 +494,12 @@ class Truth:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Truth(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/truth&lies/truth_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/truth&lies/truth.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -523,12 +523,12 @@ class Lies:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Lies(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/truth&lies/lies_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/truth&lies/lie.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -552,12 +552,12 @@ class Seeds:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Seeds(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/seeds/seeds_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/seeds/seed.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -581,12 +581,12 @@ class Stardust:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Stardust(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/stardust/stardust_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/stardust/stardust.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -610,12 +610,12 @@ class Gasoline:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Gasoline(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/gasoline/gasoline_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/gasoline/gasoline.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -639,12 +639,12 @@ class Ash:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Ash(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/ash/ash_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/ash/ash.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))
@@ -668,12 +668,12 @@ class Coral:
             raise TypeError("Sub operation can only be performed on two resources of the same type")
         return Coral(self.amount - other.amount)
 
-    def getCostImage(self, temple: str) -> Image:
+    def getCostImage(self, temple: str, tier) -> Image:
         if self.amount > 3:
             img = Image.open(f"assets/costs/coral/coral_{self.amount}.png").convert("RGBA")
-            return change_cost_color(img, temple)
+            return change_cost_color(img, temple, tier)
         img = Image.open("assets/costs/coral/coral.png").convert("RGBA")
-        version_img = change_cost_color(img, temple)
+        version_img = change_cost_color(img, temple, tier)
         duplicate_image = version_img.copy()
         final_width = version_img.width + (duplicate_image.width - 10) * (self.amount - 1)
         final_image = Image.new('RGBA', (final_width, version_img.height))

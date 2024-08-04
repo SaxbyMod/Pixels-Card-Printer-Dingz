@@ -5,6 +5,8 @@ from datetime import date, time, datetime
 
 TEMPLES = config['temples']
 TEXT_COLORS = config['text_colors']
+TEXT_COLORS_NORMAL = config['text_colors_normal']
+TEXT_COLORS_GOLDEN = config['text_colors_golden']
 FONT = "data/fonts/" + config['font'] + ".ttf"
 
 
@@ -38,7 +40,13 @@ def format_evaluation(sigil_list, trait_list, sigil_y, image, tier, temple, bloo
         traitline = costs.get_temple_variant(traitlines, temple)
         trait_height = traitline.height * 10 + 6
     for trait in trait_list:
-        trait_img = trait.getImage(color=TEXT_COLORS[temple])
+        if temple == "Structure":
+            if tier == "Rare" or tier == "Talking":
+                trait_img = trait.getImage(color=TEXT_COLORS_GOLDEN[temple])
+            else:
+                trait_img = trait.getImage(color=TEXT_COLORS_NORMAL[temple])
+        else:
+            trait_img = trait.getImage(color=TEXT_COLORS[temple])
         # If the trait height overflows the card, we can't draw the sigils.
         if sigil_y + trait_height + trait_img.height > image.height:
             can_draw_sigils = False
@@ -50,7 +58,7 @@ def format_evaluation(sigil_list, trait_list, sigil_y, image, tier, temple, bloo
     return can_draw_sigils, use_empty_bottom, trait_height
 
 
-def paste_card_art(name, image, cost, temple):
+def paste_card_art(name, image, cost, temple, tier):
     # Fetch card art and paste it
     card_art = None
     image_file = name.translate(str.maketrans("", "", " ',-!?"))
@@ -71,7 +79,7 @@ def paste_card_art(name, image, cost, temple):
     # Generate and paste cost
     cost_y = config['cost_bottom']
     for cost in cost:
-        cost_img = cost.getCostImage(temple)
+        cost_img = cost.getCostImage(temple, tier)
         cost_y -= cost_img.height + 10
         image.paste(cost_img, (config['cost_right_border'] - cost_img.width, cost_y), cost_img)
 
@@ -141,10 +149,10 @@ def write_name(image, draw, name):
     draw.text((name_x, int(name_y)), written_name, fill="black", font=heavyweight_font)
 
 
-def write_flavor_text(draw, font, flavor_text, temple):
-    flavor_text: str = flavor_text.replace("\r", "").replace('"', "''").replace("\\n","\n")
+def write_flavor_text(draw, font, flavor_text, temple, tier):
+    flavor_text = flavor_text.replace("\r", "").replace('"', "''").replace("\\n", "\n")
     if flavor_text != "BLANK":
-        lines = flavor_text.split("\\n")
+        lines = flavor_text.split("\n")
         y_offset = config['flavor_text_top_height']
         for line in lines:
             while draw.textlength(line, font=font) > config['max_flavor_text_width']:
@@ -152,8 +160,15 @@ def write_flavor_text(draw, font, flavor_text, temple):
                 line = line[:limit] + "..."
                 line += "''" if "''" in line else ""
             flavor_text_x = 300 + (700 - draw.textlength(line, font=font)) // 2
-            draw.text((flavor_text_x, y_offset), line, fill=TEXT_COLORS[temple], font=font)
+            if temple == "Structure":
+                if tier == "Rare" or tier == "Talking":
+                    draw.text((flavor_text_x, y_offset), line, fill=TEXT_COLORS_GOLDEN[temple], font=font)
+                else:
+                    draw.text((flavor_text_x, y_offset), line, fill=TEXT_COLORS_NORMAL[temple], font=font)
+            else:
+                draw.text((flavor_text_x, y_offset), line, fill=TEXT_COLORS[temple], font=font)
             y_offset += 36
+
 
 
 def write_card_description(image, draw, font, temple, tier, tribes):
@@ -165,18 +180,30 @@ def write_card_description(image, draw, font, temple, tier, tribes):
         description = description[:-1]
     desc_y = config['description_top_height']
     desc_x = (image.width - draw.textlength(description, font=font)) // 2
-    draw.text((desc_x, desc_y), description, fill=TEXT_COLORS[temple], font=font)
+    if temple == "Structure":
+        if tier == "Rare" or tier == "Talking":
+            draw.text((desc_x, desc_y), description, fill=TEXT_COLORS_GOLDEN[temple], font=font)
+        else:
+            draw.text((desc_x, desc_y), description, fill=TEXT_COLORS_NORMAL[temple], font=font)
+    else:
+        draw.text((desc_x, desc_y), description, fill=TEXT_COLORS[temple], font=font)
 
-def write_portrait_artist(image, draw, font, artist, temple):
+def write_portrait_artist(image, draw, font, artist, temple, tier):
     current_date_time = datetime.now().strftime('%d-%m-%Y, %H:%M:%S')
     description = f"Artist: {artist}, Format: Dingz Megamix, Printed At: {current_date_time}"
     desc_y = config['artist_bottom_height']
     desc_x = (image.width - draw.textlength(description, font=font)) // 2
-    draw.text((desc_x, desc_y), description, fill=TEXT_COLORS[temple], font=font)
+    if temple == "Structure":
+        if tier == "Rare" or tier == "Talking":
+            draw.text((desc_x, desc_y), description, fill=TEXT_COLORS_GOLDEN[temple], font=font)
+        else:
+            draw.text((desc_x, desc_y), description, fill=TEXT_COLORS_NORMAL[temple], font=font)
+    else:
+        draw.text((desc_x, desc_y), description, fill=TEXT_COLORS[temple], font=font)
 
 
 
-def draw_text(image, name, tier, temple, tribes, flavor_text, artist):
+def draw_text(image, name, tier, temple, tribes, flavor_text):
     draw = ImageDraw.Draw(image)
     heavyweight_font = ImageFont.truetype(FONT, config['flavor_text'])
 
@@ -184,12 +211,12 @@ def draw_text(image, name, tier, temple, tribes, flavor_text, artist):
     write_name(image, draw, name)
 
     # Write flavor text
-    write_flavor_text(draw, heavyweight_font, flavor_text, temple)
+    write_flavor_text(draw, heavyweight_font, flavor_text, temple, tier)
 
     # Write tribes, tier and temple
     if config["write_card_description"]:
         write_card_description(image, draw, heavyweight_font, temple, tier, tribes)
-    write_portrait_artist(image, draw, heavyweight_font, artist, temple)
+
 
 
 def draw_conduit_indicator(image, conduit_img):
@@ -203,7 +230,6 @@ def draw_sigils(image, temple, tier, file_tier, sac, bloodless,
     can_draw_sigils, use_empty_bottom, trait_height = format_evaluation(
         sigil_list, trait_list, sigil_y, image, tier, temple, bloodless, default_format
     )
-
     if use_empty_bottom:
         if not config["allow_card_bottom_removal"]:
             can_draw_sigils = False
@@ -317,6 +343,7 @@ def create_card(csv_dict):
     tier = csv_dict['Tier']
     file_tier = tier if tier != "Side Deck" else "Common"
     temple = csv_dict['Temple']
+    artist = csv_dict['Credit']
 
     # Load card back
     img = Image.open(f"assets/cardbacks/{file_tier}{sac}Cardback.png").convert("RGBA")
@@ -328,7 +355,7 @@ def create_card(csv_dict):
     cost = costs.get_cost(csv_dict['Cost'] if csv_dict['Cost'].upper() not in ['NONE', '', 'FREE'] else None)
 
     if config["text_over_art"]:
-        paste_card_art(name, image, cost, temple)
+        paste_card_art(name, image, cost, temple, tier)
 
     # Determine the tribe list.
     tribes = csv_dict['Tribes'].split(' ') if csv_dict['Tribes'] not in ['None', ''] else []
@@ -347,7 +374,7 @@ def create_card(csv_dict):
         conduit_img = Image.open(f"assets/conduit_indicators/{conduit}.png").convert("RGBA")
 
     # Write text
-    draw_text(image, name, tier, temple, tribes, csv_dict["Flavor Text"], csv_dict["Credit"])
+    draw_text(image, name, tier, temple, tribes, csv_dict["Flavor Text"])
 
     # Generate sigils and traits
 
@@ -393,5 +420,8 @@ def create_card(csv_dict):
         power = int(csv_dict['Power'] if csv_dict['Power'] not in ["x", "X", ''] else 0)
         power_coord = config['power_coord'].get(temple if not bloodless else 'Terrain')
         draw.text(power_coord, str(power), fill="black", font=heavyweight_font)
+    
+    heavyweight_font = ImageFont.truetype(FONT, config['flavor_text'])
+    write_portrait_artist(image, draw, heavyweight_font, artist, temple, tier)
 
     return image, name

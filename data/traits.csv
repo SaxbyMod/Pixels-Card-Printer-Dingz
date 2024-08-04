@@ -18,7 +18,7 @@ Gem Power,"This card's power is equal to the number of Mox cards you control.",T
 Gift Dogs,"While this card is on the field, all Canine cards you control act as though they have the [sigil:GiftBearer] ""Gift Bearer"" sigil.",
 Gnawed Remains Trait,"While this card is on the field, you may play Hound cards for half their cost, rounded down.",
 Gone Reminder,"As a reminder, all changes to a card's power and sigils are reverted after it leaves the field.",
-Gunbot Trait,"While this card is not opposing another card, it has 0 power.",
+Target Required,"While this card is not being opposed by another card, this card has its power reduced to 2.",
 Hand Power,"This card's power is equal to the number of cards in your hand, to a maximum of 5.",T
 Kraken trait,"On your next draw step, search and place any Tentacle card over this one.",
 Lammergier Trait,"If this card has 4 or more power, it does not recieve the effects of [sigil:Airborne] ""Airborne"".",
