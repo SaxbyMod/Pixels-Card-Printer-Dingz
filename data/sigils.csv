@@ -2,7 +2,7 @@ Name,Description,Can_be_colored,Is_attack_sigil
 Abyss Cost,"For each ""TOKEN"" in your discard, you may play this card for 2 less [resource:bone] bones.",T,
 Aggressive,"When played, the opposing card is dealt 1 damage.",T,
 Aiming Arcane,"If you provide 2 unique colors of gems, this card may target any enemy space each time it strikes.",,
-Airborne,"When this card would attack it strikes the opponent directly instead of the opposing card.",T,
+Airborne,When this card would attack it strikes the opponent directly instead of the opposing card.,T,
 All-Sight,"During your draw step, you may look at the top card of one of your decks before drawing.",T,
 Altar Prayer,"When played, look at and rearrange the top 3 cards on your deck, adding any Altar cards you see to your hand.",T,
 Amorphous,This card is treated as having all of the opposing card's sigils.,T,
@@ -25,7 +25,7 @@ Bell Ringer,"While this card is on the field, when the bell is rung this card ga
 Bifurcated Strike,This card only strikes both adjacent spaces to the opposing space. Additional power only apply to the first strike.,T,
 Blood Battery,"Every 4 [resource:energy] energy you spend in a single turn, gain a blood token. These can serve as substitute for 1 [resource:blood] blood when playing a card.",,
 Blood Conduit,"If you control another Conduit card, this one will not perish when sacrificed.",T,
-Bloodfiend,"When this card kills another card, this card gains +2 power to a maximum of 5."
+Bloodfiend,"When this card kills another card, this card gains +2 power to a maximum of 5.",,
 Bloodless,This card cannot be sacrificed.,,
 Bloodlust,"When this card kills another card, this card gains +1 power, to a maximum of 5 above its base power.",T,
 Bloodsucker,"After this card damages another it gains 1 health, up to 5.",T,
@@ -49,8 +49,8 @@ Circuit Latch,"When this card perishes by combat, choose any card on the field. 
 Clinger,"Each time you place a card, move this card to the closest open space between them.",T,
 Cold Read,"When played, write down the full name of any Common card. Each time it is played by anyone, this card gains 1 power, up to 5.",T,
 Colony,"While this card is on the field, this cards power is equal to the amount of cards on your side of the field with the 'Ant' tribe excluding this card, to a maximum of 5 power.",T,T
-"Colony (Unnerfed)","While this card is on the field, this cards power is equal to the amount of cards on your side of the field with the 'Ant' tribe, to a maximum of 5 power.",T,T
-Comforting Aura,"During your end step, the cards left and right of this card gain +2 health, to a maximum of 3 above the base cards health."
+Colony (Unnerfed),"While this card is on the field, this cards power is equal to the amount of cards on your side of the field with the 'Ant' tribe, to a maximum of 5 power.",T,T
+Comforting Aura,"During your end step, the cards left and right of this card gain +2 health, to a maximum of 3 above the base cards health.",,
 Convalesce,"During your end step this card gains 1 health, to a maximum of 5.",T,
 Corpse Eater,"When a card you control perishes in combat, you may place this card in its space.",T,
 Creeping Outwards,"On the second draw step after this card was played, search a ""TOKEN"" and play it over this.",T,
@@ -295,9 +295,9 @@ Waterborne,"During your End and Draw steps, flip this card over. While this card
 Wild Reshape,"On your next draw step, place your deck's top card in this card's space.",T,
 Witching Hour,All Spectre cards you control have 1 more power.,T,
 Worthy Sacrifice,"When this card is sacrificed, it provides +3 [resource:blood] blood.",,
-Yeetbot,"During your play step, discard a ""TOKEN"" from your hand to deal 3 damage to any card on the field.",T,
+Brood Parasite,"When this card is played, if the slot opposing this card is empty, place a ""TOKEN"" in the opposing slot.",T,
 Killing Scene,"When this card or another 'Phone' or 'Spectral' card on owners side of the field kill a card, search one 'Phone' or 'Spectral' card from your main deck or discard pile.",,
-Spectral Calling,"This card's power is equal to the amount of 'Phone' or 'Spectral' cards on your side of the field.",,
+Spectral Calling,This card's power is equal to the amount of 'Phone' or 'Spectral' cards on your side of the field.,,
 Tribal Energizer,"While this card is on the field, when a card is played on the owners side of the field with any of this cards tribes, the owner gains +1[resource:energy] energy.",,
 Tribal Rage,"While this card is on the field, if a card with any of this cards tribes is on owners side of the field, that card gains +1 power.",,
 Tribal Prisms,"While this card is on the field, if a card with any of this cards tribes is on owners side of the field, that card provides +1 [resource:prism]prism gem.",,
@@ -305,4 +305,5 @@ Tribal Unburial,"While this card is on the field, if a card with any of this car
 Ice Cold,"While this card is on the field, if a card is played opposing this card that card cannot change lanes until it is attacked by combat.",,
 Hounding,"While this card is on the field, all cards that have 'Hound' in their name gain the option to choose whether guardian is triggered or not.",,
 Tribe Hatred,"When this card would, if the opposing card is of the ""TOKEN"" tribe, this card attacks that card directly with a power increase of 2.",,
-Fish Out Of Water,"During your end step, this card gains a mark, roll the mark the result determines which side it starts on being [sigil:Waterborne] waterborne or [sigil:Airborne] airborne, than every next endstep flip the mark to the other side."
+Fish Out Of Water,"During your end step, this card gains a mark, roll the mark the result determines which side it starts on being [sigil:Waterborne] waterborne or [sigil:Airborne] airborne, than every next endstep flip the mark to the other side.",,
+Brood Parasite,"When this card is played, if the slot opposing this card is empty, place a ""TOKEN"" from your hand, deck, or discard in the opposing slot.",,

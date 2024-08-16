@@ -42,11 +42,11 @@ def format_evaluation(sigil_list, trait_list, sigil_y, image, tier, temple, bloo
     for trait in trait_list:
         if temple == "Structure":
             if tier == "Rare" or tier == "Talking":
-                trait_img = trait.getImage(color=TEXT_COLORS_GOLDEN[temple])
+                trait_img = trait.getImage(color=config["text_colors_golden"][temple])
             else:
-                trait_img = trait.getImage(color=TEXT_COLORS_NORMAL[temple])
+                trait_img = trait.getImage(color=config["text_colors_normal"][temple])
         else:
-            trait_img = trait.getImage(color=TEXT_COLORS[temple])
+            trait_img = trait.getImage(color=config["text_colors"][temple])
         # If the trait height overflows the card, we can't draw the sigils.
         if sigil_y + trait_height + trait_img.height > image.height:
             can_draw_sigils = False
@@ -162,11 +162,11 @@ def write_flavor_text(draw, font, flavor_text, temple, tier):
             flavor_text_x = 300 + (700 - draw.textlength(line, font=font)) // 2
             if temple == "Structure":
                 if tier == "Rare" or tier == "Talking":
-                    draw.text((flavor_text_x, y_offset), line, fill=TEXT_COLORS_GOLDEN[temple], font=font)
+                    draw.text((flavor_text_x, y_offset), line, fill=config["text_colors_golden"][temple], font=font)
                 else:
-                    draw.text((flavor_text_x, y_offset), line, fill=TEXT_COLORS_NORMAL[temple], font=font)
+                    draw.text((flavor_text_x, y_offset), line, fill=config["text_colors_normal"][temple], font=font)
             else:
-                draw.text((flavor_text_x, y_offset), line, fill=TEXT_COLORS[temple], font=font)
+                draw.text((flavor_text_x, y_offset), line, fill=config["text_colors"][temple], font=font)
             y_offset += 36
 
 
@@ -182,11 +182,11 @@ def write_card_description(image, draw, font, temple, tier, tribes):
     desc_x = (image.width - draw.textlength(description, font=font)) // 2
     if temple == "Structure":
         if tier == "Rare" or tier == "Talking":
-            draw.text((desc_x, desc_y), description, fill=TEXT_COLORS_GOLDEN[temple], font=font)
+            draw.text((desc_x, desc_y), description, fill=config["text_colors_golden"][temple], font=font)
         else:
-            draw.text((desc_x, desc_y), description, fill=TEXT_COLORS_NORMAL[temple], font=font)
+            draw.text((desc_x, desc_y), description, fill=config["text_colors_normal"][temple], font=font)
     else:
-        draw.text((desc_x, desc_y), description, fill=TEXT_COLORS[temple], font=font)
+        draw.text((desc_x, desc_y), description, fill=config["text_colors"][temple], font=font)
 
 def write_portrait_artist(image, draw, font, artist, temple, tier):
     current_date_time = datetime.now().strftime('%d-%m-%Y, %H:%M:%S')
@@ -195,11 +195,11 @@ def write_portrait_artist(image, draw, font, artist, temple, tier):
     desc_x = (image.width - draw.textlength(description, font=font)) // 2
     if temple == "Structure":
         if tier == "Rare" or tier == "Talking":
-            draw.text((desc_x, desc_y), description, fill=TEXT_COLORS_GOLDEN[temple], font=font)
+            draw.text((desc_x, desc_y), description, fill=config["text_colors_golden"][temple], font=font)
         else:
-            draw.text((desc_x, desc_y), description, fill=TEXT_COLORS_NORMAL[temple], font=font)
+            draw.text((desc_x, desc_y), description, fill=config["text_colors_normal"][temple], font=font)
     else:
-        draw.text((desc_x, desc_y), description, fill=TEXT_COLORS[temple], font=font)
+        draw.text((desc_x, desc_y), description, fill=config["text_colors"][temple], font=font)
 
 
 
@@ -284,7 +284,13 @@ def draw_sigils(image, temple, tier, file_tier, sac, bloodless,
             image.paste(traitline, (traitline_x, traitline_y), traitline)
 
         for trait in trait_list:
-            trait_img = trait.getImage(color=TEXT_COLORS[temple])
+            if temple == "Structure":
+                if tier == "Rare" or tier == "Talking":
+                    trait_img = trait.getImage(color=config["text_colors_golden"][temple])
+                else:
+                    trait_img = trait.getImage(color=config["text_colors_normal"][temple])
+            else:
+                trait_img = trait.getImage(color=config["text_colors"][temple])
             image = paste_sigil(image, trait_img, (config['sigil_left_border'], sigil_y))
             sigil_y += trait_img.height
             if trait.is_attack_sigil:
