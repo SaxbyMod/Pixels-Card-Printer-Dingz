@@ -12,15 +12,29 @@ Adder,Beast,Common,2 blood,1,2,Touch of Death,,,Reptile,"From under the brush co
 Raven Egg,Beast,Common,1 blood,0,2,Fledgling,Raven,,Avian,"An egg from a clever bird, even threatening\nin this state, soon it will become a blight of a bird.",Pixel Profligate
 Salmon,Beast,Common,2 blood,2,2,"Sprinter, Waterborne",,,Aquatic,"A surprisingly strong fish, with the power\nof attacking its prey then quickly slipping away.",Pixel Profligate
 Great White,Beast,Common,3 blood,4,2,Waterborne,,Target Required,Aquatic,"It can smell a drop of blood from miles away,\nonce it does it will come to its prey immediately.",Pixel Profligate
-Bloodhound,Beast,Common,2 blood,2,3,"Guardian, Hounding",,,Canine,A mans best friend specialized in defending its owner\nit will pounce in front of anything it doesnt trust.," Pixel Profligate"
+Bloodhound,Beast,Common,2 blood,2,3,"Guardian, Hounding",,,Canine,A mans best friend specialized in defending its owner\nit will pounce in front of anything it doesnt trust.,Pixel Profligate
 Ant Queen,Beast,Common,2 blood,1,3,"Colony (Unnerfed), Ant Spawner",,,Ant Insect,"The royal mother of all ants alike, if you see it\nkill it at first sight or there will be ants of plenty.",Pixel Profligate
 Sparrow,Beast,Common,1 blood,1,3,Airborne,,,Avian,"The meek and feeble sparrow, it gathers insects to\nfeed its offspring, and also to eat for themselves.",Pixel Profligate
 Kingfisher,Beast,Common,1 blood,1,2,"Airborne, Waterborne",,,Avian,"A swift bird of its calibar, it swims to avoid its\npredators and flys to avoid its prey.",Pixel Profligate
 Wolf Cub,Beast,Common,1 blood,1,1,Fledgling,Wolf,,Canine,"An ambitious young pup, mind you it is a feisty one,\nand as soon as it grows up your in for a treat!",Pixel Profligate
 Bullfrog,Beast,Common,1 blood,1,2,Mighty Leap,,,Aquatic Reptile,It watches and sees everything and especially keeps an\neye out for creatures that are above them.," Pixel Profligate"
 Cuckoo,Beast,Common,2 blood,2,1,"Airborne, Brood Parasite",Broken Egg,,Avian,"It keeps a watchful eye out for its prey, if it sees\nan enemy, it will take its eggs and bash them.",Pixel Profligate
-Black Goat,Beast,Uncommon,1 blood,0,1,Worthy Sacrifice,,,Hooved,"A truly worthy sacrifice, the black goat is one of\nthe greatest honor you can grant for sacrifice."," Pixel Profligate"
-Magpie,Beast,Uncommon,2 blood,1,2,"Hoarder, Airborne",,,Avian,"If its nice you will get treasure,\nhowever, if you're not nice, it will give you scrap."," Pixel Profligate"
+Ringworm,Beast,Common,1 blood,0,1,Tribal Power,Insect,,Insect,"Ah what a useless specimen, the only way it wants\nto get anything done is if it has company.",Pixel Profligate
+Octopus,Beast,Common,2 blood,2,2,"Ink Defense, Evasion",,,Aquatic,"An evasive octopus, it loves to hide in the dark but\nwhen it is found, it will spray ink at the enemy.",Murigen
+Leuchloridium,Beast,Common,1 blood,0,3,"Emerald Gem, Taunt",,,Insect,"This creature lurks in caves and tricks wild beasts\ninto thinking that it is food, but instead find it.",Pixel Profligate
+Flying Ant,Beast,Common,1 blood,X,1,"Colony, Airborne",,,Ant Insect,This creature is a flying version of a worker ant\nit likes to get fly its way into the food source.,Pixel Profligate
+Tadpole,Beast,Common,Free,0,1,"Waterborne, Fledgling",Bullfrog,,Aquatic Reptile,A cute little tadpole it swims at its infancy until\nit grows old and gains arms and legs to walk.,Pixel Profligate
+Lil' Frog,Beast,Common,Free,0,2,Burrower,,,Aquatic Reptile,A little frog on its back is a note that reads:\nkick me for 10 foils!,Pixel Profligate
+River Snapper,Beast,Common,2 blood,1,6,Bastion,,,Reptile,"With a huge shell on its back comes a huge\ndefense to get through, be careful, they also bite!",Pixel Profligate
+Mantis,Beast,Common,1 blood,1,1,Bifurcated Strike,,,Insect,It is a small critter that you can find in forests\nbut be careful its claws can really really hurt.,Pixel Profligate
+Wild Bull,Beast,Common,2 blood,3,2,Rampager,,,Hooved,"What a bull, rampaging through the woods\nwithout a single care in the world, watch out or else!",Pixel Profligate
+Hawk,Beast,Common,2 blood,3,1,"Aquanaut, Airborne",,,Avian,This bird gets fish for its young with its sharp\ntalons and swift movement.,Pixel Profligate
+Raven,Beast,Common,2 blood,2,3,Airborne,,,Avian,"A horribly smart bird, it smells corpses to find its\nfood than signals other birds to the corpse.",Pixel Profligate
+Bee,Beast,Common,1 bone,1,1,Airborne,,,Insect,"A pest in every way possible but they are just as\neasy to get rid of, if you have the supplies.",Pixel Profligate
+Pronghorn,Beast,Common,2 blood,1,3,"Bifurcated Strike, Sprinter",,,Hooved,The lowly pronghorn grazes the field for its prey\nif it finds them it rams into their skulls with its head.,Pixel Profligate
+Black Goat,Beast,Uncommon,1 blood,0,1,Worthy Sacrifice,,,Hooved,"A truly worthy sacrifice, the black goat is one of\nthe greatest honor you can grant for sacrifice.",Pixel Profligate
+Magpie,Beast,Uncommon,2 blood,1,2,"Hoarder, Airborne",,,Avian,"If its nice you will get treasure,\nhowever, if you're not nice, it will give you scrap.",Pixel Profligate
+Cat,Beast,Uncommon,1 blood,0,2,Nine Lives,Undead Cat,,Feline,"What a cute kitty but beware, it only has\nnine lives once there up, game over!",Pixel Profligate
 The Stoat,Beast,Talking,1 blood,1,3,Tribal Energizer,,,Vermin,"""Why what a total misplay! Why choose me, there\nare sooo many better options!""",Pixel Profligate
 Stinkbug,Beast,Talking,2 bones,1,2,"Stinky, Tribal Unburial",,,Insect,"""It is time my dear insect friends, time to scavenge\nfor some bones that is! NOW DIG!!""",Pixel Profligate
 Stunted Wolf,Beast,Talking,2 blood,2,2,Tribal Prisms,,,Canine,"""A vacuous landscape fills my vision, illustrious and\nvariegated shall it be once more!""",Pixel Profligate

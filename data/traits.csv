@@ -24,7 +24,7 @@ Kraken trait,"On your next draw step, search and place any Tentacle card over th
 Lammergier Trait,"If this card has 4 or more power, it does not recieve the effects of [sigil:Airborne] ""Airborne"".",
 Maw Power,This card's power is equal to 3 minus the number of Mox cards you control.,T
 Mirror Power,This card's power is equal to the opposing card's power.,T
-Nine Lives,"After sacrificing this card 9 times, you may search a ""TOKEN"" and place it over this.",
+Nine Lives,"While this card is on the field, when this card would be sacrificed it does not perish, after this trait triggers for the ninth time, this card is discarded without perishing then search a ""TOKEN"" from your deck to take its place.",
 Noble Stag Trait,"Each time this card is sacrificed, it gains 1 power, to a maximum of 5.",
 Pike Sage Trait,"If this card has 1 power, it strikes will simultaneously damage the opposing card and the scales directly.",
 Pipe Bomb Trait,"If this card perishes due to [sigil:Rotting] ""Rotting"", the effects of [sigil:Detonator] Detonator will trigger as though this card had perished by combat.",
