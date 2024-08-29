@@ -40,3 +40,4 @@ traeH Power,This card's power is equal to the opposing card's health.,T
 Warren Trait,"When sacrificed, search 1 ""TOKEN"" into your hand.",
 WERE THE RATS,"While this card is on the field, all Vermin cards you control act as though they have the [sigil:TouchofDeath] ""Touch of Death"" sigil.",
 Unhammerable,This card may not be hammered.,
+Tribe Specific Effects,"Any tribal effects that do not specify ""TOKEN"" in its effect are not applied to this card.",

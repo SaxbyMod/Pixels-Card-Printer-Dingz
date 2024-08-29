@@ -32,7 +32,7 @@ Hawk,Beast,Common,2 blood,3,1,"Aquanaut, Airborne",,,Avian,"This bird gets fish 
 Raven,Beast,Common,2 blood,2,3,Airborne,,,Avian,"A horribly smart bird, it smells corpses to find its\nfood than signals other birds to the corpse.",Pixel Profligate
 Bee,Beast,Common,1 bone,1,1,Airborne,,,Insect,"A pest in every way possible but they are just as\neasy to get rid of, if you have the supplies.",Pixel Profligate
 Pronghorn,Beast,Common,2 blood,1,3,"Bifurcated Strike, Sprinter",,,Hooved,"The lowly pronghorn grazes the field for its prey\nif it finds them it rams into their skulls with its head.",Pixel Profligate
-Mantis God,Beast,Rare,2 blood,1,2,"Bifurcated Strike, Tribal Rage",,,Insect,"The god of the insect race, it will enlighten the\ninsect race if used properly, and kept safe.",Pixel Profligate
+Mantis God,Beast,Rare,2 blood,1,2,"Bifurcated Strike, Tribal Rage",Nobel,Tribe Specific Effects,Insect Nobel,"The god of the insect race, it will enlighten the\ninsect race if used properly, and kept safe.",Pixel Profligate
 Black Goat,Beast,Uncommon,1 blood,0,1,Worthy Sacrifice,,,Hooved,"A truly worthy sacrifice, the black goat is one of\nthe greatest honor you can grant for sacrifice.",Pixel Profligate
 Magpie,Beast,Uncommon,2 blood,1,2,"Hoarder, Airborne",,,Avian,"If its nice you will get treasure,\nhowever, if you're not nice, it will give you scrap.",Pixel Profligate
 Cat,Beast,Uncommon,1 blood,0,2,Nine Lives,Undead Cat,,Feline,"What a cute kitty but beware, it only has\nnine lives once there up, game over!",Pixel Profligate
