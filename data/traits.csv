@@ -1,5 +1,4 @@
 Name,Description,Is_attack_sigil
-3astly,This card's cost must be paid by sacrificing at least 3 cards.,
 Abyss Cost,"For each ""TOKEN"" in your discard, you may play this card for 2 less [icon:bone] bones.",
 Altar Bonus,"When looking at cards with [sigil:Divination] ""Divination"", add any Altar card you see to your hand.",
 Amalgam Trait,This card counts as every possible tribe.,
@@ -18,7 +17,7 @@ Gem Power,This card's power is equal to the number of Mox cards you control.,T
 Gift Dogs,"While this card is on the field, all Canine cards you control act as though they have the [sigil:GiftBearer] ""Gift Bearer"" sigil.",
 Gnawed Remains Trait,"While this card is on the field, you may play Hound cards for half their cost, rounded down.",
 Gone Reminder,"As a reminder, all changes to a card's power and sigils are reverted after it leaves the field.",
-Target Required,"While this card is not being opposed by another card, this card has its power reduced to 2.",
+Target Required,"While this card is on the field, if this card is not being opposed by another card, this card has its power reduced to 2.",
 Hand Power,"This card's power is equal to the number of cards in your hand, to a maximum of 5.",T
 Kraken trait,"On your next draw step, search and place any Tentacle card over this one.",
 Lammergier Trait,"If this card has 4 or more power, it does not recieve the effects of [sigil:Airborne] ""Airborne"".",
@@ -41,3 +40,4 @@ Warren Trait,"When sacrificed, search 1 ""TOKEN"" into your hand.",
 WERE THE RATS,"While this card is on the field, all Vermin cards you control act as though they have the [sigil:TouchofDeath] ""Touch of Death"" sigil.",
 Unhammerable,This card may not be hammered.,
 Tribe Specific Effects,"Any tribal effects that do not specify ""TOKEN"" in its effect are not applied to this card.",
+Beastly,"This card requires TOKEN cards worth of sacrifices, to be played."

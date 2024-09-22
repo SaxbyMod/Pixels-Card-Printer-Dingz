@@ -227,7 +227,7 @@ Sacrifices Must Be Made,This card's cost must be paid by sacrificing at least 3 
 Salvation,"On its owner's second end step after this card was played, it is moved to the discard pile without perishing.",T,
 Scalebound,You may move the scales 2 points closer to you in order to play this card for free.,T,
 Scattered Bones,"This card's power is equal to half the number of unspent [resource:bone] bones you own, rounded down and to a maximum of 5.",,T
-Scavenger,"Each time an opposing card perishes, gain 1 [resource:bone] bone.",T,
+Scavenger,"While this card is on the field, if one of your opponent's cards perish, the owner gains +1 [resource:bone]bone.",T,
 Scrounger,"When this card kills another, gain 1 [resource:bone] bone.",T,
 Sea Shanty,"All cards you control with the [sigil:Brittle] ""Brittle"" sigil have 1 more power.",T,
 Search Engine,"When played, search any card that costs [resource:energy] energy from your deck to your hand.",,
@@ -310,3 +310,4 @@ Brood Parasite,"When this card is played, if the slot opposing this card is empt
 Aggravating,"When this card is played, this card deals 1 damage to the card opposing it, if the slot is empty, nothing happens.",,
 Tribal Power,"While this card is on the field, its power is equal to the number of ""TOKEN"" tribe cards on your side of the field minus 1.",,T
 Ink Defense,"When this card is damaged for the first time, the striker's power is set to 0.",,
+Target Required,"While this card is on the field, if this card is not being opposed by another card, this card has its power reduced to 2.",,
