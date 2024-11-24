@@ -19,7 +19,7 @@ Raven,Beast,Common,2 blood,2,3,Airborne,,,Avian,"A horribly smart bird, it smell
 Raven Egg,Beast,Common,1 blood,0,2,Fledgling,Raven,,Avian,"An egg from a clever bird, even threatening\nin this state, soon it will become a blight of a bird.",Pixel Profligate
 Hawk,Beast,Common,2 blood,3,1,"Aquanaut, Airborne",,,Avian,"This bird gets fish for its young with its sharp\ntalons and swift movement.",Pixel Profligate
 Wild Bull,Beast,Common,2 blood,3,2,Rampager,,,Hooved,"What a bull, rampaging through the woods\nwithout a single care in the world, watch out or else!",Pixel Profligate
-Mantis,Beast,Common,1 blood,1,1,Bifurcated Strike,,,Insect,"It is a small critter that you can find in forests\nbut be careful its claws can really really hurt.",Pixel Profligate
+Mantis,Beast,Common,1 blood,1,2,Bifurcated Strike,,,Insect,"It is a small critter that you can find in forests\nbut be careful its claws can really really hurt.",Pixel Profligate
 River Snapper,Beast,Common,2 blood,1,6,Bastion,,,Reptile,"With a huge shell on its back comes a huge\ndefense to get through, be careful, they also bite!",Pixel Profligate
 "Lil' Frog",Beast,Common,Free,0,2,Burrower,,,Aquatic Reptile,"A little frog on its back is a note that reads:\nkick me for 10 foils!",Pixel Profligate
 Tadpole,Beast,Common,Free,0,1,"Waterborne, Fledgling",Bullfrog,,Aquatic Reptile,"A cute little tadpole it swims at its infancy until\nit grows old and gains arms and legs to walk.",Pixel Profligate
@@ -39,14 +39,39 @@ Salmon,Beast,Common,2 blood,2,2,"Sprinter, Waterborne",,,Aquatic,"A surprisingly
 Squirrel Ball,Beast,Common,1 blood,0,2,Squirrel Shedder,,,Vermin,"An odd amount of squirrels curled up in a ball,\nshedding a few out as it moves around.",Pixel Profligate
 Adder,Beast,Common,2 blood,1,2,Touch of Death,,,Reptile,"From under the brush comes its venomous bite,\neven a simple bite will kill.",Pixel Profligate
 Worker Ant,Beast,Common,1 blood,X,2,Colony,,,Ant Insect,"What may be a measly worker ant right now,\ncan become an overwhelming force of ant's quickly.",Pixel Profligate
+Mirror Tentacle,Beast,Common,1 blood,X,3,Facsimile,,,Tentacle,"Curious...\nI'm... not actually sure what this does...",Pixel Profligate
+Hand Tentacle,Beast,Common,1 blood,X,1,Strong Hand,,,Tentacle,"Strange...\nDid I do that...?",Pixel Profligate
+Bell Tentacle,Beast,Common,2 blood,0,2,Bell Ringer,,,Tentacle,"Interesting...\nHm... I don’t recall making that one...",Pixel Profligate
+Beaver,Beast,Common,2 blood,1,3,"Dam Builder, Industrious",Dam,,Vermin,"The industrious beaver, every day it builds\na piece of its home or another home.",Pixel Profligate
+Moose Buck,Beast,Common,3 blood,3,7,Hefty,,,Hooved,"A massive brute of a beast, keep an eye out or it will\npush you along with it while moving.",Pixel Profligate
+Bloodhound,Beast,Common,2 blood,2,3,"Guardian, Hounding",,,Canine,"A mans best friend specialized in defending its owner\nit will pounce in front of anything it doesnt trust.",Pixel Profligate
+Opossum,Beast,Common,2 bones,1,1,,,,Vermin,"Why that is one resourceful creature\nbeware they are weak but very cute.",Pixel Profligate
+Rattler,Beast,Common,6 bones,3,1,Piercing,,,Reptile,"A tough but old rattlesnake, do note\nits bite is lethal if your not careful.",Pixel Profligate
+Cockroach,Beast,Common,4 bones,1,1,Unkillable,,,Insect,"A irremovable cockroach, those pesky things\nlove to creep others out, as well as scavenge.",Pixel Profligate
+Corpse Maggots,Beast,Common,5 bones,1,2,Corpse Eater,,,Insect,"A rotting corpse with some...\nMAGGOTS!!! why do these things keep getting into my body part collection?",Pixel Profligate
+Coyote,Beast,Common,4 bones,2,1,,,,Canine,"What a cute little doggy, with some overly\nsharpened teeth oh wait thats not a doggo thats a coyote be careful!",Pixel Profligate
+Alpha,Beast,Common,5 bones,1,3,Tribal Rage,,,Canine,"The alpha of the pack, they make sure\neveryone in their tribe stays in line.",Pixel Profligate
+Turkey Vulture,Beast,Common,9 bones,3,3,Airborne,,,Avian,"A horrid tyrant it seeks out prey\nto feed itself and its flock or to just kill.",Pixel Profligate
+Mealworm,Beast,Common,3 bones,0,2,Morsel,,,Insect,"What a scrumptious meal, however\nim not satisfied and would like a bit more!!",Pixel Profligate
+Gem Tentacle,Beast,Common,2 blood,X,2,Gem Powered,,,Tentacle,"Mysterious...\nThis... definitely wasnt me...",Pixel Profligate
+Electric Tentacle,Beast,Common,1 blood,X,1,Battery Powered,,,Tentacle,"Shocking...\nWhere are t-these coming from?",Pixel Profligate
+Wolverine,Beast,Common,5 bones,1,3,Bloodlust,,,Vermin,"Be extremely careful with this fella\nthey may look cute but they can kill 10 times the size of itself.",Pixel Profligate
+Rooster,Beast,Common,3 bones+1 blood,1,3,"Aggressive, Airborne",,,Avian,"An angry rooster, just in time too\nyou were about to doze off in thought.",Pixel Profligate
+Bat,Beast,Common,4 bones,2,1,Airborne,,,Avian,"The Meddlesome Bat, they tend to fly\naround in caverns and come out at night to eat.",Pixel Profligate
 
 Pack Mule,Beast,Uncommon,2 blood,1,4,"Loaded, Sprinter",,Loaded Trait,Hooved,"A nearly defenseless mule, with a gift attached.\nThe attached note reads 'A gift from the Prospector, use wisely.'",Pixel Profligate
 Rat King,Beast,Uncommon,2 blood,2,1,Bone King,,,Vermin,"Royalty doomed from the start, too many rats\nto rule over henseforth it is crumbling, and dying.",Pixel Profligate
-Cat,Beast,Uncommon,1 blood,0,2,Nine Lives,Undead Cat,,Feline,"What a cute kitty but beware, it only has\nnine lives once there up, game over!",Pixel Profligate
+Cat,Beast,Uncommon,1 blood,0,2,,Undead Cat,Nine Lives,Feline,"What a cute kitty but beware, it only has\nnine lives once there up, game over!",Pixel Profligate
 Black Goat,Beast,Uncommon,1 blood,0,1,Worthy Sacrifice,,,Hooved,"A truly worthy sacrifice, the black goat is one of\nthe greatest honor you can grant for sacrifice.",Pixel Profligate
 Magpie,Beast,Uncommon,2 blood,1,2,"Hoarder, Airborne",,,Avian,"If its nice you will get treasure,\nhowever, if you're not nice, it will give you scrap.",Pixel Profligate
 
 Really Cool Dog,Beast,Rare,2 blood,2,1,"Ice Cold, Guardian",,,Canine,"Be careful, for if you call him cute he will\nbite a hole straight through your leg.",Desaft
+Geck,Beast,Rare,,1,1,,,,Reptile,"This creature is just a silly fella,\nthere main goal is to have fun and lie around in the sun.",Pixel Profligate
+Amalgam,Beast,Rare,2 blood,3,3,,,,Canine Reptile Avian Insect Hooved Aquatic Vermin Feline Cryptid Ant,"What a sight... Its a\nAvicanrepinahoovaquaverfelcryant!!",Pixel Profligate
+Urayuli,Beast,Rare,4 blood,7,7,,3,Beastly,Cryptid,"This is truly the sight of all. An destroyer of worlds,\nit will come to your village and kill and only kill.",Pixel Profligate
+Child 13,Beast,Rare,2 blood,0,2,,Starvation,Thirteen Lives,Cryptid,"What a sleepy fella, when you harm it\nit will wake up until you harm it again.",Pixel Profligate
+Mantis God,Beast,Rare,1 blood,1,2,Bifurcated Strike,,Mantis God Trait,Insect,"A small critter born of goddom\nit is the rightous hand of god and the perfect Mantis.",Pixel Profligate
+
 
 The Stoat,Beast,Talking,1 blood,1,3,Battery Bearer,,,Vermin,"""Hey its me!! Nice Topdeck!! Am I your goto??\nIf so have yourself another Battery!!""",Pixel Profligate
 Stinkbug,Beast,Talking,2 bones,1,2,"Stinky, Tribal Unburial",,,Insect,"""It is time my dear insect friends, time to scavenge\nfor some bones that is! NOW DIG!!""",Pixel Profligate
@@ -59,3 +84,4 @@ Dark Sage,Magick,Talking,2 emeralds,0,2,Comforting Aura,,,Healer,"""Golly! So ma
 Warren,Structure,Common,1 blood,0,2,Rabbit Hole,,,,"Ah what a lovely hole in the ground I wonder wha-\noh thats what happens a million fluffy fellas biting me",Pixel Profligate
 Broken Egg,Structure,Common,2 bones,0,2,"Rotting, Aggravating, Bloodless",,Unhammerable,,"The egg of a bird, smashed into pieces, sadly not\neverything may get the chance they deserve.",Pixel Profligate
 Beehive,Structure,Common,1 blood,0,3,Bees Within,Bee,,,"Be careful around this nest, many creatures lie within,\nready to sting you at any moment!",Pixel Profligate
+Dam,Structure,Common,1 bone,0,2,"Bloodless",,,,"Wood tore out of the ground by a silly little beaver\nthan the wood is turned into a house for the creature.",Pixel Profligate
