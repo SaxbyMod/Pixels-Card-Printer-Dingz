@@ -468,3 +468,19 @@ Mad Ritualist,Magick,Common,2 blood,X,4,"Life Donor, Animated Hemanation, Gem Po
 Null Mage,Magick,Common,6 energy,1,3,Prism Conduit,,,Android Conduit Mage,Even mages see the value of energy.,Pixel Profligate
 Forgotten Soul,Undead,Side Deck,1 energy,1,1,"Brittle, Bloodless",,,Spectre,Some souls never find salvation.,Murigen
 Empty Vessel,Tech,Side Deck,1 energy,0,2,,,,,No functionality has been inserted.,Pixel Profligate
+
+
+-=-=-=-=-=-=-=-
+
+Mirror Tentacle,Beast,Common,1 blood,X,3,Facsimile,,,Tentacle,"Curious...\nI'm... not actually sure what this does...",Pixel Profligate
+Hand Tentacle,Beast,Common,1 blood,X,1,Strong Hand,,,Tentacle,"Strange...\nDid I do that...?",Pixel Profligate
+Bell Tentacle,Beast,Common,2 blood,0,2,Bell Ringer,,,Tentacle,"Interesting...\nHm... I don’t recall making that one...",Pixel Profligate
+Moose Buck,Beast,Common,3 blood,3,7,Hefty,,,Hooved,"A massive brute of a beast, keep an eye out or it will\npush you along with it while moving.",Pixel Profligate
+Great White,Beast,Common,3 blood,4,2,Waterborne,,Target Required,Aquatic,"It can smell a drop of blood from miles away,\nonce it does it will come to its prey immediately.",Pixel Profligate
+Bloodhound,Beast,Common,2 blood,2,3,"Guardian, Hounding",,,Canine,"A mans best friend specialized in defending its owner\nit will pounce in front of anything it doesnt trust.",Pixel Profligate
+Beaver,Beast,Common,2 blood,1,3,"Dam Builder, Tribal Rage",Dam,,Vermin,"The industrious beaver, every day it builds\na piece of its home or another home.",Pixel Profligate
+Mantis King,Beast,Rare,2 blood,2,2,"Bifurcated Strike, Tribal Rage",Noble,Tribe Specific Effects,Insect Noble,"The king of the insect race, it will empower the\ninsect race if used properly, and kept safe.",The Stoat Lord
+Urayuli,Beast,Rare,4 blood,7,7,,3,Beastly,Cryptid,"The almighty urayuli, it stalks you through the\nnight, when you least expect it, it eats you alive.",Pixel Profligate
+Hrokkall,Beast,Rare,1 blood,1,2,"Submerging Energy, Waterborne",,,Aquatic,"A slippery eel, when it is in fear, it electrifies\nthe waters causing it to be a bad time for others.",Pixel Profligate
+Hodag,Beast,Rare,2 blood,1,5,"Bloodthirsty",,,Amphibian Cryptid,"This abomination is part frog, elephant, dino, and has\nlegs with claws and a tail with spears on its sides.",Pixel Profligate
+Dam,Structure,Common,1 bone,0,2,"Bloodless",,,,"Wood tore out of the ground by a silly little beaver\nthan the wood is turned into a house for the creature.",Pixel Profligate

@@ -36,10 +36,10 @@ icons.sigil = true     # Display sigil icons (Default: false)
 
 # Text/Icon size for the sigil upper_name and sigil description
 sigil_name = 48                     # (Default: 55)
-sigil_description = 42              # (Default: 45)
-sigil_description_icon_size = 35    # (Default: 40)
-trait_description = 36              # (Default: 40)
-trait_description_icon_size = 30    # (Default: 35)
+sigil_description = 38              # (Default: 45)
+sigil_description_icon_size = 31    # (Default: 40)
+trait_description = 34              # (Default: 40)
+trait_description_icon_size = 28    # (Default: 35)
 
 # Sigil export settings
 export_normal_formatting = true             # Export sigils in default format (Default: true)
