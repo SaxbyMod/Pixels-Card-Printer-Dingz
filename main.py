@@ -52,36 +52,36 @@ def export_data(csv_file, arrays, export_function):
     with tqdm(total=len(csv_file), desc=f"{BLUE}Exporting{RESET}", leave=True, bar_format="{l_bar}{bar}|",
               colour="blue") as pbar:
         for row in csv_file:
-            try:
-                item_name = row.get('Card Name', row.get('Name', '')).upper()
-                if item_name in arrays.values():
-                    found = False
-                    for open_array in open_arrays:
-                        found = arrays[open_array] == item_name
-                        if found:
-                            open_arrays.remove(open_array)
-                            arrays.pop(open_array)
-                            if len(open_arrays) == 0:
-                                in_array = False
-                            break
-                    if not found:
-                        for key in arrays:
-                            if arrays[key] == item_name:
-                                arrays.pop(key)
+            if "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" not in row: 
+                try:
+                    item_name = row.get('Card Name', row.get('Name', '')).upper()
+                    if item_name in arrays.values():
+                        found = False
+                        for open_array in open_arrays:
+                            found = arrays[open_array] == item_name
+                            if found:
+                                open_arrays.remove(open_array)
+                                arrays.pop(open_array)
+                                if len(open_arrays) == 0:
+                                    in_array = False
                                 break
-                    run_in_thread_pool(export_function, row)
-                elif in_array or type(data_list) is set or item_name in data_list:
-                    if item_name in data_list:
-                        data_list.remove(item_name)
-                    run_in_thread_pool(export_function, row)
-                elif item_name in arrays:
-                    open_arrays.append(item_name)
-                    in_array = True
-                    run_in_thread_pool(export_function, row)
-            except Exception as e:
-                logging.error(f"Error exporting data for row {row}: {e}\n{traceback.format_exc()}")
-                print(f"{RED}Error exporting data for row {row}: {e}{RESET}")
-
+                        if not found:
+                            for key in arrays:
+                                if arrays[key] == item_name:
+                                    arrays.pop(key)
+                                    break
+                        run_in_thread_pool(export_function, row)
+                    elif in_array or type(data_list) is set or item_name in data_list:
+                        if item_name in data_list:
+                            data_list.remove(item_name)
+                        run_in_thread_pool(export_function, row)
+                    elif item_name in arrays:
+                        open_arrays.append(item_name)
+                        in_array = True
+                        run_in_thread_pool(export_function, row)
+                except Exception as e:
+                    logging.error(f"Error exporting data for row {row}: {e}\n{traceback.format_exc()}")
+                    print(f"{RED}Error exporting data for row {row}: {e}{RESET}")
             pbar.update(1)
 
 
@@ -131,11 +131,12 @@ def get_csv_data(file_path):
 def load_data(csv_data, action):
     rows = csv_data
     for row in rows:
-        try:
-            action(row)
-        except Exception as e:
-            logging.error(f"Error loading data for row {row}: {e}\n{traceback.format_exc()}")
-            print(f"{RED}Error loading data for row {row}: {e}{RESET}")
+        if "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" not in row: 
+            try:
+                action(row)
+            except Exception as e:
+                logging.error(f"Error loading data for row {row}: {e}\n{traceback.format_exc()}")
+                print(f"{RED}Error loading data for row {row}: {e}{RESET}")
 
 
 try:

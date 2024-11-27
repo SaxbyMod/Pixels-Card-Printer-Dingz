@@ -1,10 +1,12 @@
 Card Name,Temple,Tier,Cost,Power,Health,Sigils,Token,Traits,Tribes,Flavor Text,Credit
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- BEAST -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 Squirrel,Beast,Side Deck,Free,0,1,,,,Vermin,"Small, Frail, Weak, and feels every ounce of pain,\nbut with sacrifice comes value.",Pixel Profligate
 
 Rabbit,Beast,Common,Free,0,1,,,Rabbit Trait,Vermin,"A silly little rabbit running around in the grass\ngive it a boop on the nose for me would you?",Pixel Profligate
 River Otter,Beast,Common,1 blood,1,1,Waterborne,,,Aquatic,"A slippery critter, it likes to swim around in water\nhowever its not very threatening, just keep an eye on it.",Pixel Profligate
-Mole,Beast,Common,1 blood,0,4,Burrower,,,Vermin,"A pesky mole, always trying to get in the way, if you ever\nneed to get rid of one grab a sledgehammer and whack it in the head.",Pixel Profligate
+Mole,Beast,Common,1 blood,0,4,Burrower,,,Vermin,"A pesky mole, always trying to get in the way, if you\nneed to get rid of one grab a hammer and whack it.",Pixel Profligate
 Porcupine,Beast,Common,1 blood,1,2,Sharp Quills,,,Vermin,"A prickly vermin, be careful around its quills\nthey sting when they pierce your skin.",Pixel Profligate
 Skunk,Beast,Common,1 blood,1,3,Stinky,,,Vermin,"Thats quite a....strong smell its best to keep\n*cough* away from it *cough* for a while...",Pixel Profligate
 Field Mice,Beast,Common,2 blood,2,2,Fecundity,,,Vermin,"Where you find one it is more than likely\ntheres another close behind it.",Pixel Profligate
@@ -55,7 +57,7 @@ Turkey Vulture,Beast,Common,9 bones,3,3,Airborne,,,Avian,"A horrid tyrant it see
 Mealworm,Beast,Common,3 bones,0,2,Morsel,,,Insect,"What a scrumptious meal, however\nim not satisfied and would like a bit more!!",Pixel Profligate
 Gem Tentacle,Beast,Common,2 blood,X,2,Gem Powered,,,Tentacle,"Mysterious...\nThis... definitely wasnt me...",Pixel Profligate
 Electric Tentacle,Beast,Common,1 blood,X,1,Battery Powered,,,Tentacle,"Shocking...\nWhere are t-these coming from?",Pixel Profligate
-Wolverine,Beast,Common,5 bones,1,3,Bloodlust,,,Vermin,"Be extremely careful with this fella\nthey may look cute but they can kill 10 times the size of itself.",Pixel Profligate
+Wolverine,Beast,Common,5 bones,1,3,Bloodlust,,,Vermin,"Be extremely careful with this fella\nthey may look cute but they can kill 10 times its size.",Pixel Profligate
 Rooster,Beast,Common,3 bones+1 blood,1,3,"Aggressive, Airborne",,,Avian,"An angry rooster, just in time too\nyou were about to doze off in thought.",Pixel Profligate
 Bat,Beast,Common,4 bones,2,1,Airborne,,,Avian,"The Meddlesome Bat, they tend to fly\naround in caverns and come out at night to eat.",Pixel Profligate
 
@@ -66,12 +68,16 @@ Black Goat,Beast,Uncommon,1 blood,0,1,Worthy Sacrifice,,,Hooved,"A truly worthy 
 Magpie,Beast,Uncommon,2 blood,1,2,"Hoarder, Airborne",,,Avian,"If its nice you will get treasure,\nhowever, if you're not nice, it will give you scrap.",Pixel Profligate
 
 Really Cool Dog,Beast,Rare,2 blood,2,1,"Ice Cold, Guardian",,,Canine,"Be careful, for if you call him cute he will\nbite a hole straight through your leg.",Desaft
-Geck,Beast,Rare,,1,1,,,,Reptile,"This creature is just a silly fella,\nthere main goal is to have fun and lie around in the sun.",Pixel Profligate
+Geck,Beast,Rare,,1,1,,,,Reptile,"This creature is just a silly fella, they're\n main goal is to have fun and lie around in the sun.",Pixel Profligate
 Amalgam,Beast,Rare,2 blood,3,3,,,,Canine Reptile Avian Insect Hooved Aquatic Vermin Feline Cryptid Ant,"What a sight... Its a\nAvicanrepinahoovaquaverfelcryant!!",Pixel Profligate
 Urayuli,Beast,Rare,4 blood,7,7,,3,Beastly,Cryptid,"This is truly the sight of all. An destroyer of worlds,\nit will come to your village and kill and only kill.",Pixel Profligate
 Child 13,Beast,Rare,2 blood,0,2,,Starvation,Thirteen Lives,Cryptid,"What a sleepy fella, when you harm it\nit will wake up until you harm it again.",Pixel Profligate
 Mantis God,Beast,Rare,1 blood,1,2,Bifurcated Strike,,Mantis God Trait,Insect,"A small critter born of goddom\nit is the rightous hand of god and the perfect Mantis.",Pixel Profligate
-
+Pack Rat,Beast,Rare,2 blood,2,2,Trinket Bearer,,Pack Rat Trait,Vermin,"Ah the trusty pack rat, its from a good ol' friend of\nmine treat them well, and they will treat you well.",Pixel Profligate
+Mole Man,Beast,Rare,1 blood,0,6,"Mighty Leap, Burrower",,,Vermin,"The untiring annoyance of a mole, this one will also\nsmash birds with hammers so they do the same to it.",Pixel Profligate
+Amoeba,Beast,Rare,2 bones,1,1,Amorphous,,,Cryptid,"The ever changing amoeba, taking a new form every time\nyou look at it!",Pixel Profligate
+Great Kraken,Beast,Rare,2 blood,1,1,Waterborne,,Great Kraken Trait,Tentacle,"A kraken with more 'limbs' than usual it seeks love\nand S3X with you, do you accept or kill it with fire?",Pixel Profligate
+Hrokkall,Beast,Rare,1 blood,1,2,"Submerging Energy, Waterborne",,,Aquatic,"A slippery eel, when it is in fear, it electrifies\nthe waters causing it to be a bad time for others.",Pixel Profligate
 
 The Stoat,Beast,Talking,1 blood,1,3,Battery Bearer,,,Vermin,"""Hey its me!! Nice Topdeck!! Am I your goto??\nIf so have yourself another Battery!!""",Pixel Profligate
 Stinkbug,Beast,Talking,2 bones,1,2,"Stinky, Tribal Unburial",,,Insect,"""It is time my dear insect friends, time to scavenge\nfor some bones that is! NOW DIG!!""",Pixel Profligate
@@ -85,3 +91,8 @@ Warren,Structure,Common,1 blood,0,2,Rabbit Hole,,,,"Ah what a lovely hole in the
 Broken Egg,Structure,Common,2 bones,0,2,"Rotting, Aggravating, Bloodless",,Unhammerable,,"The egg of a bird, smashed into pieces, sadly not\neverything may get the chance they deserve.",Pixel Profligate
 Beehive,Structure,Common,1 blood,0,3,Bees Within,Bee,,,"Be careful around this nest, many creatures lie within,\nready to sting you at any moment!",Pixel Profligate
 Dam,Structure,Common,1 bone,0,2,"Bloodless",,,,"Wood tore out of the ground by a silly little beaver\nthan the wood is turned into a house for the creature.",Pixel Profligate
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- UNDEAD -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Skeleton,Undead,Side Deck,,1,1,"Brittle, Bloodless",,,Skeletal,"A frail pile of bones, ready to crumble\nthey may move once but after that their gone.",Pixel Profligate
+Grave Diglin,Undead,Side Deck,,0,1,"Bone Shoveler, Bloodless",,,Skeletal,"A faint spirit of a once grave digger now just a\nmeasly shoveler for shallow graves.",Desaft
