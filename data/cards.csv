@@ -83,16 +83,20 @@ The Stoat,Beast,Talking,1 blood,1,3,Battery Bearer,,,Vermin,"""Hey its me!! Nice
 Stinkbug,Beast,Talking,2 bones,1,2,"Stinky, Tribal Unburial",,,Insect,"""It is time my dear insect friends, time to scavenge\nfor some bones that is! NOW DIG!!""",Pixel Profligate
 Stunted Wolf,Beast,Talking,2 blood,2,2,,,Gem,Canine,"""A vacuous landscape fills my vision, illustrious and\nvariegated shall it be once more!""",Pixel Profligate
 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- UNDEAD -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Skeleton,Undead,Side Deck,,1,1,"Brittle, Bloodless",,,Skeletal,"A frail pile of bones, ready to crumble\nthey may move once but after that their gone.",Pixel Profligate
+Grave Diglin,Undead,Side Deck,,0,1,"Bone Shoveler, Bloodless",,,Skeletal,"A faint spirit of a once grave digger now just a\nmeasly shoveler for shallow graves.",Desaft
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Magicks -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 Brutalist Beast,Magick,Talking,2 rubies,1,3,Bloodfiend,,,Swordsman,"""God F*$%ing Dammit, Drow Knight!!! Why am I always\ndragged here with you?!?!""",Desaft
 Drow Knight,Magick,Talking,2 sapphires,3,1,Airborne,,,Sky,""".    .    .""",Desaft
 Dark Sage,Magick,Talking,2 emeralds,0,2,Comforting Aura,,,Healer,"""Golly! So many new faces to see around here!! I excite!!""",Desaft
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Structure -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 Warren,Structure,Common,1 blood,0,2,Rabbit Hole,,,,"Ah what a lovely hole in the ground I wonder wha-\noh thats what happens a million fluffy fellas biting me",Pixel Profligate
 Broken Egg,Structure,Common,2 bones,0,2,"Rotting, Aggravating, Bloodless",,Unhammerable,,"The egg of a bird, smashed into pieces, sadly not\neverything may get the chance they deserve.",Pixel Profligate
 Beehive,Structure,Common,1 blood,0,3,Bees Within,Bee,,,"Be careful around this nest, many creatures lie within,\nready to sting you at any moment!",Pixel Profligate
 Dam,Structure,Common,1 bone,0,2,"Bloodless",,,,"Wood tore out of the ground by a silly little beaver\nthan the wood is turned into a house for the creature.",Pixel Profligate
-
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- UNDEAD -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-Skeleton,Undead,Side Deck,,1,1,"Brittle, Bloodless",,,Skeletal,"A frail pile of bones, ready to crumble\nthey may move once but after that their gone.",Pixel Profligate
-Grave Diglin,Undead,Side Deck,,0,1,"Bone Shoveler, Bloodless",,,Skeletal,"A faint spirit of a once grave digger now just a\nmeasly shoveler for shallow graves.",Desaft
