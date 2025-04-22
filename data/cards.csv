@@ -27,7 +27,7 @@ River Snapper,Beast,Common,2 blood,1,6,Bastion,,,Reptile,"With a huge shell on i
 Tadpole,Beast,Common,Free,0,1,"Waterborne, Fledgling",Bullfrog,,Aquatic Reptile,"A cute little tadpole it swims at its infancy until\nit grows old and gains arms and legs to walk.",Pixel Profligate
 Bullfrog,Beast,Common,1 blood,1,2,Mighty Leap,,,Aquatic Reptile,"It watches and sees everything and especially keeps an\neye out for creatures that are above them.",Pixel Profligate
 Flying Ant,Beast,Common,1 blood,X,1,"Colony, Airborne",,,Ant Insect,"This creature is a flying version of a worker ant\nit likes to fly its way around.",Pixel Profligate
-Leuchloridium,Beast,Common,1 blood,0,3,"Emerald Gem, Taunt",,,Insect,"This creature lurks in caves and tricks wild beasts\ninto thinking that it is food, but instead find it.",Pixel Profligate
+Leuchloridium,Beast,Common,1 blood,0,3,"Emerald Gem, Taunt",,,Insect,"This creature lurks in caves and tricks wild beasts\ninto thinking that it is food, but instead find it.",Synthia_2000
 Octopus,Beast,Common,2 blood,2,2,"Ink Defense, Evasion",,,Aquatic,"An evasive octopus, it loves to hide in the dark but\nwhen it is found, it will spray ink at the enemy.",Murigen
 Ringworm,Beast,Common,1 blood,0,1,Tribal Power,Insect,,Insect,"Ah what a useless specimen, the only way it wants\nto get anything done is if it has company.",Pixel Profligate
 Cuckoo,Beast,Common,2 blood,2,2,"Airborne, Brood Parasite",Broken Egg,,Avian,"It keeps a watchful eye out for its prey, if it sees\nan enemy, it will take its eggs and bash them.",Pixel Profligate
@@ -87,6 +87,21 @@ Stunted Wolf,Beast,Talking,2 blood,2,2,,,Gem,Canine,"""A vacuous landscape fills
 
 Skeleton,Undead,Side Deck,,1,1,"Brittle, Bloodless",,,Skeletal,"A frail pile of bones, ready to crumble\nthey may move once but after that their gone.",Pixel Profligate
 Grave Diglin,Undead,Side Deck,,0,1,"Bone Shoveler, Bloodless",,,Skeletal,"A faint spirit of a once grave digger now just a\nmeasly shoveler for shallow graves.",Desaft
+
+Banshee,Undead,Common,2 bones,1,1,"Airborne",,,Ghoul,"This ghoul is rather happy despite the flood\nof tears it sheds each waking moment.",Pixel Profligate
+Librarian,Undead,Common,"11 bones",1,2,"Hackers Arsenol",,,Skeletal,"A follower of the Archivist, they hack into PC's, Hard\ndrives, Websites, Servers, and the OL- ---- for data.",Pixel Profligate
+Gravedigger,Undead,Common,1 bone,0,2,"Bone Digger, Frozen Away",Grave Diglin,,Rotten,"A rotting victim of the graveyard, forced to shovel out\ngraves for the rest of time.",Pixel Profligate
+Spine Wyrm,Undead,Common,5 bones,2,2,"Sharp Quills",,,Skeletal,"A spine of an ancient dragon that once soared above,\nwhen it perished we brought it into a new existance.",Desaft
+Big Bones,Undead,Common,6 bones,2,3,"Shovester",,,Skeletal,"The fallen skeleton of a Titan returned to life\nby a miracle in the night.",Desaft
+The Bloated,Undead,Common,5 bones,1,2,"Poisoned, Plague Spreader",,,Rotten,"A victim of the black death\nit struggles to survive even in the afterlife.",Pixel Profligate
+Ghast,Undead,Common,3 bones,1,2,"Stinky",,,Rotten,"A mangled corpse of a being that once was left to\nrot and deform on the open ground never to be buried.",Pixel Profligate
+Corpse Collector,Undead,Common,4 bones,1,2,"Corpse Stealer",,,Skeletal,"A skeletal mass on a spree for corpses to\nfeed its master.",Paperpyro5031
+Ghost Ship,Undead,Common,3 bones,0,1,"Skeleton Crew, Waterborne",,,Haunted,"A ship of the deceased on its final\npassage down the river of Styx.",Pixel Profligate
+Zombie,Undead,Common,1 bone,1,2,"Rotting",,,Rotten,"A rotting pile of mass crumbling at the\nseams in front of us at all times.",Pixel Profligate
+
+Bone Lords Horn,Undead,Uncommon,3 bones,0,2,"Bonehorn",,,Skeletal,"A horn of the great beast, torn viciously off of\nits own head as a reward for listening to its rambling.",Pixel Profligate
+
+Pharohs Pets,Undead,Rare,8 bones,0,1,"Many Lives, Worthy Sacrifice",,,Rotten Hooved Feline,"The pets of the almighty pharoh used as a tool of\nsacrifice for the gods above and below the surface.",Pixel Profligate
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Magicks -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 

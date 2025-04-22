@@ -38,7 +38,7 @@ Bone Digger,"During your end step, the owner of this card gains +1 [resource:bon
 Bone Shoveler,"During your end step, flip a coin, if it lands on [resource:heads]heads the owner of this card gains +1 bone, if it lands on [resource:tails]tails, the owner of this card will gain nothing."
 Bone King,"When this card perishes, it generates +4 [resource:bone]bones instead of one.",,
 Bone Leech,"Each time you gain a [resource:bone] bone due to [sigil:Scavenger] ""Scavenger"", gain another.",T,
-Bonehorn,"During your play step, you may pay 1 [resource:energy] energy to gain 1 [resource:bone] bone.",T,
+Bonehorn,"During your playstep, you may pay -1 [resource:energy]energy to gain +3 [resource:bone]bones, this effect only triggers once per turn.",T,
 Boneless,This card does not drop a [resource:bone] bone when it perishes.,,
 Breaker when Powered,"If this card is between two Conduit cards, Conduit cards cannot be attacked.",T,
 Brittle,"During your end step, this card perishes, unless it did not strike a card this turn, if it doesnt the next turn as well it perishes.",T,
@@ -172,7 +172,7 @@ Mech Builder,"When played, search any common Mechabeast card into your hand.",T,
 Memoriam,"When another card you control perishes, gain an additional [resource:bone] bone.",T,
 Mental Fortitude,"While there are at least 2 cards in your hand, cards you control will ignore the [sigil:GemDependent] ""Gem Dependent"" sigil.",T,
 Mental Gemnastics,"When played, look at as many cards from your deck as Mox cards you control, and add one to your hand. Shuffle the rest back into your deck.",,
-Mighty Leap,"While this card is on the field, if a strike would strike the slot this card is in directly, this card would be struck instead.",T,
+Mighty Leap,"While this card is on the field, if a card would strike the slot this card is in directly, this card would be struck instead.",T,
 Morsel,"When this card is sacrificed, add its [resource:health]health and [resource:power]power to the card that this was sacrificed for.",T,
 Mox Dropper,"During your end step, move this card to an adjacent empty space. Search any Mox card from your side deck and place it in its previous space.",,
 Nameless,This card counts as every possible tribe.,T,
@@ -242,7 +242,7 @@ Shovel Latch,"When this card perishes by combat, choose any card on the field. D
 Side Hustle,"When this card deals direct damage, draw a card from your side deck for each point of damage dealt.",T,
 Signal,"While this card is on the field, Energy gains you twice the blackout than you would normally recieve.",,
 Skeletal Horde,"When played, play a ""Skeleton"" from your side deck in each sempty space on your side.",T,
-Skeleton Crew,"During your end step, move this card to an adjacent empty space, search a common Skeleton Pirate card, or a ""Skeleton"", and place it in its previous space.",T,
+Skeleton Crew,"During your end step, move this card to an adjacent empty slot, search an ""Skeleton"" from your side deck and place it in this card's previous slot.",T,
 Skull Taker,"When this card kills another, gain 3 [resource:bone] bones.",T,
 Snag,"When played, move 1 card on the field to an empty space on its own side.",T,
 Snake Eyes,"When this card perishes, roll a d6. A corresponding amount of damage is dealt to adjacent cards, and, if this card perished by combat, to the opposing card.",T,
@@ -304,13 +304,18 @@ Tribal Rage,"While this card is on the field, if a card on your side of the fiel
 Tribal Prisms,"While this card is on the field, if a card with any of this cards tribes is on owners side of the field, that card provides +1 [resource:prism]prism gem.",,
 Tribal Unburial,"While this card is on the field, if a card with any of this cards tribes is on the owners side of the field, that card provides +1 [resource:bone]bone on play.",,
 Ice Cold,"While this card is on the field, if a card enters the opposing slot, that card may not move until this card would strike it.",,
-Tribe Hatred,"When this card would, if the opposing card is of the ""TOKEN"" tribe, this card attacks that card directly with a power increase of 2.",,
-Fish Out Of Water,"During your end step, this card gains a mark, roll the mark the result determines which side it starts on being [sigil:Waterborne] waterborne or [sigil:Airborne] airborne, than every next endstep flip the mark to the other side.",,
+Tribe Hatred,"When this card would be played, if the opposing card is of the ""TOKEN"" tribe, this card attacks that card directly with a power increase of 2.",,
+Fish Out Of Water,"During your end step, this card gains a mark, roll the mark the result determines which side it starts on being [sigil:Waterborne] waterborne or [sigil:Airborne] airborne, than every next end step flip the mark to the other side.",,
 Brood Parasite,"When this card is played, if the opposing slot is empty, place a ""TOKEN"" from your main deck in that slot.",,
 Aggravating,"When this card is played, this card deals 1 damage to the opposing card.",,
 Tribal Power,"While this card is on the field, its [resource:power]power is equal to the number of ""TOKEN"" tribe cards on your side of the field minus 1.",,T
 Ink Defense,"When this card would be struck for the first time, set the strikers [resource:power]power to 0 until this card or that card are discarded.",,
 Target Required,"While this card is on the field, if this card is not being opposed by another card, this card has its power reduced to 2.",,
 Submerging Energy,"While this card is on the field, when a card on your side of the field submerges, the owner of this card gains +1 [resource:max_energy]max energy."
-Bloodthirsty,"When this card would kill a card on your opponents side of the field, this card gains +2 attack to a max of 5 power and +1 health to a max of 5 health."
+Bloodthirsty,"When this card would kill a card on your opponents side of the field, this card gains +2 [resource:power]power to a max of 5 [resource:power]power and +1 [resource:health]health to a max of 5 [resource:health]health."
 Industrious,"While this card is on the field, all 'Structure' temple cards gain +1 [resource:power]power."
+Hackers Arsenol,"During your end step choose one card on your opponents side of the field, Create a copy of it and place it in any empty slot on your side of the field."
+Shovester,"During your end step, choose a direction for this card to move in, when this card moves all cards that are in the way are moved to the next slot in the direction, if a card would go off the board, that card perishes."
+Poisoned,"During your end step, this card loses -1 [resource:health]health, if a card perishes from this effect, Plague Spreader and similar does not trigger."
+Plague Spreader,"When this card perishes, the cards in adjacent and opposing spaces gain this sigil and the [sigil:Poisoned]""Poisoned"" sigil."
+Corpse Stealer,"When a card on your side of the field perishes, this card moves to that space and gains +1 [resource:health]health, and for each card this takes the place of gain +1 [resource:bone]bone during your end step."
